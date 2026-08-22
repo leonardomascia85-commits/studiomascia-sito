@@ -1,4 +1,4 @@
-import { ExternalLink, LogIn, MessageCircle } from "lucide-react";
+import { ExternalLink, LogIn, MessageCircle, Percent } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { buildMetadata } from "@/lib/seo";
@@ -43,68 +43,76 @@ export default function RestoAlSudPage() {
 
       {/* ACCESSO AREA CLIENTI / NUOVO CONTATTO */}
       <section className="grid md:grid-cols-2">
-        <div className="bg-gold px-6 py-8 md:px-10 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-5 text-center sm:text-left md:text-center lg:text-left">
+        <div className="bg-gold px-6 py-10 md:px-12 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-6 text-center sm:text-left md:text-center lg:text-left">
           <div>
-            <h2 className="font-serif text-xl font-medium text-ink">
+            <h2 className="font-serif text-2xl font-medium text-ink mb-2">
               Hai già una pratica con noi?
             </h2>
-            <p className="text-[13px] text-ink/70">
+            <p className="text-[15px] text-ink/70 leading-relaxed">
               Segui lo stato della domanda, carica i documenti e scrivi allo
               studio dalla tua area riservata.
             </p>
           </div>
           <a
             href={AREA_CLIENTI_URL}
-            className="flex items-center gap-2 bg-ink text-white text-[12px] font-medium tracking-[0.1em] uppercase px-7 py-3.5 whitespace-nowrap hover:bg-ink/90 shrink-0"
+            className="flex items-center gap-2 bg-ink text-white text-[13px] font-medium tracking-[0.1em] uppercase px-8 py-4 whitespace-nowrap hover:bg-ink/90 shrink-0"
           >
-            <LogIn size={14} /> Accedi all&apos;Area Clienti
+            <LogIn size={15} /> Accedi all&apos;Area Clienti
           </a>
         </div>
-        <div className="bg-parchment px-6 py-8 md:px-10 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-5 text-center sm:text-left md:text-center lg:text-left border-t md:border-t-0 border-line">
+        <div className="bg-parchment px-6 py-10 md:px-12 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-6 text-center sm:text-left md:text-center lg:text-left border-t md:border-t-0 border-line">
           <div>
-            <h2 className="font-serif text-xl font-medium text-ink">
+            <h2 className="font-serif text-2xl font-medium text-ink">
               Vuoi presentare un progetto Resto al Sud?
             </h2>
           </div>
           <a
             href="/contatti"
-            className="flex items-center gap-2 bg-ink text-white text-[12px] font-medium tracking-[0.1em] uppercase px-7 py-3.5 whitespace-nowrap hover:bg-ink/90 shrink-0"
+            className="flex items-center gap-2 bg-ink text-white text-[13px] font-medium tracking-[0.1em] uppercase px-8 py-4 whitespace-nowrap hover:bg-ink/90 shrink-0"
           >
-            <MessageCircle size={14} /> Contattaci
+            <MessageCircle size={15} /> Contattaci
           </a>
         </div>
       </section>
 
       {/* TIPOLOGIE */}
-      <section className="px-6 py-16 md:px-[60px] md:py-20">
+      <section className="px-6 py-20 md:px-[60px] md:py-28">
         <Eyebrow>In sintesi</Eyebrow>
-        <h2 className="font-serif text-3xl md:text-[36px] font-light text-ink leading-tight mb-10">
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-12">
           Due modalità di sostegno
         </h2>
-        <div className="grid md:grid-cols-2 gap-px bg-line">
+        <div className="grid md:grid-cols-2 gap-6">
           {PROGRAM_TYPES.map((p) => (
-            <div key={p.title} className="bg-parchment px-8 py-10 md:px-10">
-              <h3 className="font-serif text-2xl font-medium text-ink mb-3">
+            <div
+              key={p.title}
+              className="bg-parchment border-t-4 border-gold px-9 py-12 md:px-12"
+            >
+              <div className="flex items-center gap-2 text-gold mb-5">
+                <Percent size={20} strokeWidth={1.75} />
+              </div>
+              <h3 className="font-serif text-[26px] font-medium text-ink mb-4">
                 {p.title}
               </h3>
-              <div className="font-serif text-[32px] font-light text-gold leading-none mb-2">
+              <div className="font-serif text-[48px] font-light text-gold leading-none mb-4">
                 {p.amount}
               </div>
-              <p className="text-[13px] text-muted">{p.note}</p>
+              <p className="text-[15px] text-muted leading-relaxed">
+                {p.note}
+              </p>
             </div>
           ))}
         </div>
 
-        <h3 className="font-serif text-xl font-medium text-ink mt-12 mb-4">
+        <h3 className="font-serif text-2xl font-medium text-ink mt-16 mb-6">
           Forme giuridiche ammesse
         </h3>
-        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+        <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-1">
           {FORME_AMMESSE.map((f) => (
             <li
               key={f}
-              className="flex items-start gap-3 text-sm text-[#3a3020] py-1.5 border-b border-line"
+              className="flex items-start gap-3 text-base text-[#3a3020] py-3 border-b border-line"
             >
-              <span className="w-4 h-px bg-gold mt-2.5 shrink-0" />
+              <span className="w-4 h-px bg-gold mt-3 shrink-0" />
               {f}
             </li>
           ))}
@@ -112,48 +120,48 @@ export default function RestoAlSudPage() {
       </section>
 
       {/* REQUISITI */}
-      <section className="bg-parchment px-6 py-16 md:px-[60px] md:py-20">
+      <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
         <Eyebrow>Chi può accedere</Eyebrow>
-        <h2 className="font-serif text-3xl md:text-[36px] font-light text-ink leading-tight mb-10">
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-12">
           Requisiti soggettivi
         </h2>
-        <div className="grid md:grid-cols-3 gap-8 mb-14">
+        <div className="grid md:grid-cols-3 gap-10 mb-16">
           {REQUISITI.map((r) => (
-            <div key={r.title} className="border-l-2 border-gold pl-5">
-              <h3 className="font-serif text-lg font-medium text-ink mb-2">
+            <div key={r.title} className="border-l-2 border-gold pl-6">
+              <h3 className="font-serif text-xl font-medium text-ink mb-3">
                 {r.title}
               </h3>
-              <p className="text-[13px] text-muted leading-relaxed">
+              <p className="text-[15px] text-muted leading-relaxed">
                 {r.text}
               </p>
             </div>
           ))}
         </div>
 
-        <h3 className="font-serif text-xl font-medium text-ink mb-4">
+        <h3 className="font-serif text-2xl font-medium text-ink mb-6">
           Regioni ammesse
         </h3>
-        <div className="flex flex-wrap gap-2 mb-14">
+        <div className="flex flex-wrap gap-3 mb-16">
           {REGIONI_AMMESSE.map((r) => (
             <span
               key={r}
-              className="text-[11px] tracking-[0.1em] uppercase text-gold border border-gold/40 px-4 py-1.5"
+              className="text-[13px] tracking-[0.08em] uppercase text-gold border border-gold/40 px-5 py-2"
             >
               {r}
             </span>
           ))}
         </div>
 
-        <h3 className="font-serif text-xl font-medium text-ink mb-4">
+        <h3 className="font-serif text-2xl font-medium text-ink mb-6">
           Spese ammissibili
         </h3>
-        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 max-w-3xl">
+        <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-1 max-w-3xl">
           {SPESE_AMMISSIBILI.map((s) => (
             <li
               key={s}
-              className="flex items-start gap-3 text-sm text-[#3a3020] py-1.5 border-b border-line"
+              className="flex items-start gap-3 text-base text-[#3a3020] py-3 border-b border-line"
             >
-              <span className="w-4 h-px bg-gold mt-2.5 shrink-0" />
+              <span className="w-4 h-px bg-gold mt-3 shrink-0" />
               {s}
             </li>
           ))}
@@ -161,21 +169,21 @@ export default function RestoAlSudPage() {
       </section>
 
       {/* ITER */}
-      <section className="bg-cream px-6 py-16 md:px-[60px] md:py-20">
+      <section className="bg-cream px-6 py-20 md:px-[60px] md:py-28">
         <Eyebrow>Come funziona</Eyebrow>
-        <h2 className="font-serif text-3xl md:text-[36px] font-light text-ink leading-tight mb-10">
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-14">
           L&apos;iter della domanda, in breve
         </h2>
-        <div className="grid md:grid-cols-5 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
           {ITER_STEPS.map((s) => (
             <div key={s.num}>
-              <div className="font-serif text-3xl font-light text-gold mb-3">
+              <div className="font-serif text-4xl font-light text-gold mb-4">
                 {s.num}
               </div>
-              <h3 className="font-serif text-base font-medium text-ink mb-2 leading-snug">
+              <h3 className="font-serif text-lg font-medium text-ink mb-2.5 leading-snug">
                 {s.title}
               </h3>
-              <p className="text-[12.5px] text-muted leading-relaxed">
+              <p className="text-[14px] text-muted leading-relaxed">
                 {s.text}
               </p>
             </div>
@@ -184,9 +192,9 @@ export default function RestoAlSudPage() {
       </section>
 
       {/* NORMATIVA */}
-      <section className="px-6 py-16 md:px-[60px] md:py-20">
+      <section className="px-6 py-20 md:px-[60px] md:py-28">
         <Eyebrow>Riferimenti normativi</Eyebrow>
-        <p className="text-sm text-muted leading-relaxed max-w-2xl mb-8">
+        <p className="text-base text-muted leading-relaxed max-w-2xl mb-10">
           {NORMATIVA_NOTE}
         </p>
         <div className="flex flex-col gap-2 max-w-2xl">
@@ -196,19 +204,19 @@ export default function RestoAlSudPage() {
               href={n.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between gap-3 text-[13.5px] text-[#3a3020] py-3 border-b border-line hover:text-gold"
+              className="flex items-center justify-between gap-3 text-[15px] text-[#3a3020] py-4 border-b border-line hover:text-gold"
             >
               {n.title}
-              <ExternalLink size={13} className="shrink-0 text-muted" />
+              <ExternalLink size={14} className="shrink-0 text-muted" />
             </a>
           ))}
           <a
             href={INVITALIA_PAGINA}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[13px] text-gold mt-3"
+            className="flex items-center gap-2 text-[14px] text-gold mt-4"
           >
-            <ExternalLink size={13} /> Pagina ufficiale Invitalia
+            <ExternalLink size={14} /> Pagina ufficiale Invitalia
           </a>
         </div>
       </section>
