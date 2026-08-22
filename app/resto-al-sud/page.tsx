@@ -64,7 +64,6 @@ export default function RestoAlSudPage() {
             <h2 className="font-serif text-xl font-medium text-ink">
               Vuoi presentare un progetto Resto al Sud?
             </h2>
-            <p className="text-[13px] text-muted">Contattaci.</p>
           </div>
           <a
             href="/contatti"
