@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: "/", label: "Homepage" },
   { href: "/chi-siamo", label: "Chi Siamo" },
   { href: "/servizi", label: "Servizi" },
+  { href: "/resto-al-sud", label: "Resto al Sud" },
   { href: "/news", label: "News" },
 ];
 
