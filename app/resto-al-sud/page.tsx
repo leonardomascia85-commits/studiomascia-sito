@@ -62,12 +62,9 @@ export default function RestoAlSudPage() {
         <div className="bg-parchment px-6 py-8 md:px-10 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-5 text-center sm:text-left md:text-center lg:text-left border-t md:border-t-0 border-line">
           <div>
             <h2 className="font-serif text-xl font-medium text-ink">
-              Non hai ancora avviato nulla?
+              Vuoi presentare un progetto Resto al Sud?
             </h2>
-            <p className="text-[13px] text-muted">
-              Contattaci: ti aiutiamo a valutare i requisiti e a realizzare
-              il tuo progetto imprenditoriale.
-            </p>
+            <p className="text-[13px] text-muted">Contattaci.</p>
           </div>
           <a
             href="/contatti"
