@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Chi Siamo — Studio Mascia",
+export const metadata = buildMetadata({
+  title: "Chi Siamo",
   description:
     "Studio di Commercialisti e Revisori Legali a Palma Campania. Dal 2012 al servizio di imprese e privati, con presenza personale del titolare su ogni pratica.",
-};
+  path: "/chi-siamo",
+});
 
 const VALUES = [
   {

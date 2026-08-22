@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { ExternalLink, LogIn, MessageCircle } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
+import { buildMetadata } from "@/lib/seo";
 import {
   PROGRAM_TYPES,
   FORME_AMMESSE,
@@ -15,11 +15,12 @@ import {
   AREA_CLIENTI_URL,
 } from "@/lib/content/resto-al-sud";
 
-export const metadata: Metadata = {
-  title: "Resto al Sud 2.0 — Studio Mascia",
+export const metadata = buildMetadata({
+  title: "Resto al Sud 2.0",
   description:
-    "Sintesi del bando Resto al Sud 2.0: voucher e contributo investimento, forme ammesse, iter della domanda e riferimenti normativi. Accesso all'area clienti per chi ha già una pratica in corso.",
-};
+    "Sintesi del bando Resto al Sud 2.0: voucher e contributo investimento, requisiti, forme ammesse, iter della domanda e riferimenti normativi. Accesso all'area clienti per chi ha già una pratica in corso.",
+  path: "/resto-al-sud",
+});
 
 export default function RestoAlSudPage() {
   return (

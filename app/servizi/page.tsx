@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { SERVICES } from "@/lib/content/services";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Servizi — Studio Mascia",
+export const metadata = buildMetadata({
+  title: "Servizi",
   description:
     "Consulenza fiscale, aziendale, tributaria, contabile, revisione legale e bilanci per imprese e privati.",
-};
+  path: "/servizi",
+});
 
 export default function ServiziPage() {
   return (

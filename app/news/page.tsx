@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { getSortedNews } from "@/lib/content/news";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "News — Studio Mascia",
+export const metadata = buildMetadata({
+  title: "News",
   description:
     "Aggiornamenti fiscali, societari e normativi a cura dello Studio Mascia.",
-};
+  path: "/news",
+});
 
 export default function NewsPage() {
   const news = getSortedNews();

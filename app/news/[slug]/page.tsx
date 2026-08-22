@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { getNewsBySlug, getSortedNews } from "@/lib/content/news";
+import { buildMetadata } from "@/lib/seo";
+import { STUDIO_INFO } from "@/lib/content/studio-info";
 
 export function generateStaticParams() {
   return getSortedNews().map((n) => ({ slug: n.slug }));
@@ -14,10 +16,13 @@ export async function generateMetadata({
 }: PageProps<"/news/[slug]">) {
   const { slug } = await params;
   const item = getNewsBySlug(slug);
-  return {
-    title: item ? `${item.title} — Studio Mascia` : "News — Studio Mascia",
-    description: item?.excerpt,
-  };
+  if (!item) return buildMetadata({ title: "News", description: "", path: "/news" });
+
+  return buildMetadata({
+    title: item.title,
+    description: item.excerpt,
+    path: `/news/${item.slug}`,
+  });
 }
 
 export default async function NewsArticlePage({
@@ -27,8 +32,22 @@ export default async function NewsArticlePage({
   const item = getNewsBySlug(slug);
   if (!item) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: item.title,
+    description: item.excerpt,
+    datePublished: item.date,
+    author: { "@type": "Organization", name: STUDIO_INFO.name },
+    publisher: { "@type": "Organization", name: STUDIO_INFO.name },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <section className="bg-ink px-6 py-16 md:px-[60px] md:py-20">
         <Link
           href="/news"

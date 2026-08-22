@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { ContactForm } from "@/components/contatti/contact-form";
 import { STUDIO_INFO } from "@/lib/content/studio-info";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contatti — Studio Mascia",
+export const metadata = buildMetadata({
+  title: "Contatti",
   description:
     "Contatta lo Studio Mascia: indirizzo, email, PEC e orari. Prima consulenza senza impegno, risposta garantita entro 24 ore.",
-};
+  path: "/contatti",
+});
 
 const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
   `${STUDIO_INFO.address}, ${STUDIO_INFO.cap} ${STUDIO_INFO.city}`
