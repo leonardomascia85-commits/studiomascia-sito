@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/chi-siamo",
     "/servizi",
     "/resto-al-sud",
+    "/resto-al-sud/questionario",
     "/news",
     "/contatti",
   ].map((path) => ({

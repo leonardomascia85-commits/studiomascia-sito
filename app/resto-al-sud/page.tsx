@@ -62,9 +62,15 @@ export default function RestoAlSudPage() {
         </div>
         <div className="bg-parchment px-6 py-10 md:px-12 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-6 text-center sm:text-left md:text-center lg:text-left border-t md:border-t-0 border-line">
           <div>
-            <h2 className="font-serif text-2xl font-medium text-ink">
+            <h2 className="font-serif text-2xl font-medium text-ink mb-2">
               Vuoi presentare un progetto Resto al Sud?
             </h2>
+            <a
+              href="/resto-al-sud/questionario"
+              className="text-[13px] text-gold underline underline-offset-2 hover:text-ink"
+            >
+              Rispondi a 6 domande veloci e ti richiamiamo noi →
+            </a>
           </div>
           <a
             href="/contatti"
