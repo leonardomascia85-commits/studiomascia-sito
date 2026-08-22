@@ -13,13 +13,14 @@ export function buildMetadata({
   path: string;
 }): Metadata {
   const url = `${SITE_URL}${path}`;
+  const fullTitle = `${title} — ${SITE_NAME}`;
 
   return {
     title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url,
       siteName: SITE_NAME,
@@ -29,7 +30,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: ["/opengraph-image"],
     },
