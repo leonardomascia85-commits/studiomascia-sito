@@ -10,7 +10,7 @@ export const PROGRAM_TYPES = [
   {
     title: "Contributo investimento",
     amount: "Fino a 200.000 €",
-    note: "A fondo perduto + finanziamento bancario agevolato",
+    note: "Fondo perduto fino al 75% (quota fino a 120.000 €) e fino al 70% sulla parte tra 120.000 e 200.000 €; il resto tramite risorse proprie o finanziamento bancario",
   },
 ] as const;
 
@@ -19,6 +19,40 @@ export const FORME_AMMESSE = [
   "Società",
   "Società cooperativa",
   "Società tra professionisti",
+] as const;
+
+export const REQUISITI = [
+  {
+    title: "Età",
+    text: "Tra i 18 anni compiuti e i 35 non ancora compiuti, in condizione di inattività, inoccupazione o disoccupazione — oppure disoccupati aderenti al Programma GOL.",
+  },
+  {
+    title: "Residenza / sede",
+    text: "L'iniziativa va avviata e mantenuta in una delle regioni ammesse (vedi sotto); requisito verificato anche nei tre anni successivi all'erogazione.",
+  },
+  {
+    title: "Requisiti oggettivi",
+    text: "Iniziativa non ancora avviata, o avviata da non oltre 12 mesi dalla data di presentazione della domanda.",
+  },
+] as const;
+
+export const REGIONI_AMMESSE = [
+  "Abruzzo",
+  "Basilicata",
+  "Calabria",
+  "Campania",
+  "Molise",
+  "Puglia",
+  "Sardegna",
+  "Sicilia",
+] as const;
+
+export const SPESE_AMMISSIBILI = [
+  "Opere edili di ristrutturazione e manutenzione straordinaria (max 50% del piano investimenti)",
+  "Macchinari, impianti, attrezzature e arredi nuovi di fabbrica",
+  "Programmi informatici e servizi per tecnologie dell'informazione e telecomunicazione",
+  "Immobilizzazioni immateriali",
+  "Consulenze tecniche funzionali all'investimento",
 ] as const;
 
 export const ITER_STEPS = [

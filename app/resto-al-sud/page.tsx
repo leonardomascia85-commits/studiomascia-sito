@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { ExternalLink, LogIn } from "lucide-react";
+import { ExternalLink, LogIn, MessageCircle } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import {
   PROGRAM_TYPES,
   FORME_AMMESSE,
+  REQUISITI,
+  REGIONI_AMMESSE,
+  SPESE_AMMISSIBILI,
   ITER_STEPS,
   NORMATIVA_NOTE,
   NORMATIVA_REFS,
@@ -37,23 +40,42 @@ export default function RestoAlSudPage() {
         </p>
       </section>
 
-      {/* ACCESSO AREA CLIENTI */}
-      <section className="bg-gold px-6 py-8 md:px-[60px] flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
-        <div>
-          <h2 className="font-serif text-xl font-medium text-ink">
-            Hai già una pratica con noi?
-          </h2>
-          <p className="text-[13px] text-ink/70">
-            Segui lo stato della tua domanda, carica i documenti e scrivi
-            allo studio dalla tua area riservata.
-          </p>
+      {/* ACCESSO AREA CLIENTI / NUOVO CONTATTO */}
+      <section className="grid md:grid-cols-2">
+        <div className="bg-gold px-6 py-8 md:px-10 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-5 text-center sm:text-left md:text-center lg:text-left">
+          <div>
+            <h2 className="font-serif text-xl font-medium text-ink">
+              Hai già una pratica con noi?
+            </h2>
+            <p className="text-[13px] text-ink/70">
+              Segui lo stato della domanda, carica i documenti e scrivi allo
+              studio dalla tua area riservata.
+            </p>
+          </div>
+          <a
+            href={AREA_CLIENTI_URL}
+            className="flex items-center gap-2 bg-ink text-white text-[12px] font-medium tracking-[0.1em] uppercase px-7 py-3.5 whitespace-nowrap hover:bg-ink/90 shrink-0"
+          >
+            <LogIn size={14} /> Accedi all&apos;Area Clienti
+          </a>
         </div>
-        <a
-          href={AREA_CLIENTI_URL}
-          className="flex items-center gap-2 bg-ink text-white text-[12px] font-medium tracking-[0.1em] uppercase px-7 py-3.5 whitespace-nowrap hover:bg-ink/90"
-        >
-          <LogIn size={14} /> Accedi all&apos;Area Clienti
-        </a>
+        <div className="bg-parchment px-6 py-8 md:px-10 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-between gap-5 text-center sm:text-left md:text-center lg:text-left border-t md:border-t-0 border-line">
+          <div>
+            <h2 className="font-serif text-xl font-medium text-ink">
+              Non hai ancora avviato nulla?
+            </h2>
+            <p className="text-[13px] text-muted">
+              Contattaci: ti aiutiamo a valutare i requisiti e a realizzare
+              il tuo progetto imprenditoriale.
+            </p>
+          </div>
+          <a
+            href="/contatti"
+            className="flex items-center gap-2 bg-ink text-white text-[12px] font-medium tracking-[0.1em] uppercase px-7 py-3.5 whitespace-nowrap hover:bg-ink/90 shrink-0"
+          >
+            <MessageCircle size={14} /> Contattaci
+          </a>
+        </div>
       </section>
 
       {/* TIPOLOGIE */}
@@ -87,6 +109,55 @@ export default function RestoAlSudPage() {
             >
               <span className="w-4 h-px bg-gold mt-2.5 shrink-0" />
               {f}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* REQUISITI */}
+      <section className="bg-parchment px-6 py-16 md:px-[60px] md:py-20">
+        <Eyebrow>Chi può accedere</Eyebrow>
+        <h2 className="font-serif text-3xl md:text-[36px] font-light text-ink leading-tight mb-10">
+          Requisiti soggettivi
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 mb-14">
+          {REQUISITI.map((r) => (
+            <div key={r.title} className="border-l-2 border-gold pl-5">
+              <h3 className="font-serif text-lg font-medium text-ink mb-2">
+                {r.title}
+              </h3>
+              <p className="text-[13px] text-muted leading-relaxed">
+                {r.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="font-serif text-xl font-medium text-ink mb-4">
+          Regioni ammesse
+        </h3>
+        <div className="flex flex-wrap gap-2 mb-14">
+          {REGIONI_AMMESSE.map((r) => (
+            <span
+              key={r}
+              className="text-[11px] tracking-[0.1em] uppercase text-gold border border-gold/40 px-4 py-1.5"
+            >
+              {r}
+            </span>
+          ))}
+        </div>
+
+        <h3 className="font-serif text-xl font-medium text-ink mb-4">
+          Spese ammissibili
+        </h3>
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 max-w-3xl">
+          {SPESE_AMMISSIBILI.map((s) => (
+            <li
+              key={s}
+              className="flex items-start gap-3 text-sm text-[#3a3020] py-1.5 border-b border-line"
+            >
+              <span className="w-4 h-px bg-gold mt-2.5 shrink-0" />
+              {s}
             </li>
           ))}
         </ul>
