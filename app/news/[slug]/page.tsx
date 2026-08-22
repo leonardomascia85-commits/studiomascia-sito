@@ -51,7 +51,7 @@ export default async function NewsArticlePage({
       <section className="bg-ink px-6 py-16 md:px-[60px] md:py-20">
         <Link
           href="/news"
-          className="inline-flex items-center gap-2 text-[12px] tracking-[0.1em] uppercase text-white/50 hover:text-gold mb-8"
+          className="inline-flex items-center gap-2 text-[13px] tracking-[0.1em] uppercase text-white/50 hover:text-gold mb-8"
         >
           <ArrowLeft size={14} /> Tutte le news
         </Link>
@@ -71,14 +71,14 @@ export default async function NewsArticlePage({
         {item.body.map((paragraph, i) => (
           <p
             key={i}
-            className="text-[15px] text-[#3a3020] leading-[1.8] font-light mb-5"
+            className="text-[16px] text-[#3a3020] leading-[1.8] font-light mb-5"
           >
             {paragraph}
           </p>
         ))}
 
         {item.source && (
-          <p className="text-[13px] text-muted mt-8 pt-6 border-t border-line">
+          <p className="text-[14px] text-muted mt-8 pt-6 border-t border-line">
             Fonte:{" "}
             <a
               href={item.source.url}

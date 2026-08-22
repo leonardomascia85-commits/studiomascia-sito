@@ -24,7 +24,7 @@ export default function NewsPage() {
 
       <section className="px-6 py-16 md:px-[60px] md:py-20">
         {news.length === 0 ? (
-          <p className="text-sm text-muted">
+          <p className="text-[15px] text-muted">
             Non ci sono ancora articoli pubblicati.
           </p>
         ) : (
@@ -35,7 +35,7 @@ export default function NewsPage() {
                 href={`/news/${n.slug}`}
                 className="group py-8 first:pt-0"
               >
-                <time className="text-[11px] tracking-[0.15em] uppercase text-gold font-mono">
+                <time className="text-[12px] tracking-[0.15em] uppercase text-gold font-mono">
                   {new Date(n.date).toLocaleDateString("it-IT", {
                     day: "2-digit",
                     month: "long",
@@ -45,7 +45,7 @@ export default function NewsPage() {
                 <h2 className="font-serif text-2xl font-medium text-ink mt-2 mb-2.5 group-hover:text-gold transition-colors">
                   {n.title}
                 </h2>
-                <p className="text-sm text-muted leading-relaxed">
+                <p className="text-[15px] text-muted leading-relaxed">
                   {n.excerpt}
                 </p>
               </Link>

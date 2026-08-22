@@ -34,7 +34,7 @@ export function SiteHeader() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`text-[12px] tracking-[0.12em] uppercase transition-colors ${
+                className={`text-[13px] tracking-[0.12em] uppercase transition-colors ${
                   active ? "text-gold" : "text-white/60 hover:text-gold"
                 }`}
               >
@@ -44,7 +44,7 @@ export function SiteHeader() {
           })}
           <Link
             href="/contatti"
-            className="bg-gold text-ink text-[11px] font-medium tracking-[0.12em] uppercase px-5 py-2.5 hover:bg-[#d4b06a] transition-colors"
+            className="bg-gold text-ink text-[12px] font-medium tracking-[0.12em] uppercase px-5 py-2.5 hover:bg-[#d4b06a] transition-colors"
           >
             Contattaci
           </Link>
@@ -66,7 +66,7 @@ export function SiteHeader() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="py-2.5 text-[12px] tracking-[0.12em] uppercase text-white/70"
+              className="py-2.5 text-[13px] tracking-[0.12em] uppercase text-white/70"
             >
               {l.label}
             </Link>
@@ -74,7 +74,7 @@ export function SiteHeader() {
           <Link
             href="/contatti"
             onClick={() => setOpen(false)}
-            className="mt-2 bg-gold text-ink text-[11px] font-medium tracking-[0.12em] uppercase px-5 py-2.5 text-center"
+            className="mt-2 bg-gold text-ink text-[12px] font-medium tracking-[0.12em] uppercase px-5 py-2.5 text-center"
           >
             Contattaci
           </Link>

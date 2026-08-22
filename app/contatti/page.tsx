@@ -26,7 +26,7 @@ export default function ContattiPage() {
             per <em className="text-gold">aiutarti.</em>
           </h1>
         </div>
-        <p className="text-sm text-white/50 leading-relaxed max-w-[300px] md:text-right">
+        <p className="text-[15px] text-white/50 leading-relaxed max-w-[300px] md:text-right">
           Prima consulenza senza impegno.
           <br />
           Risposta garantita entro 24 ore.
@@ -38,7 +38,7 @@ export default function ContattiPage() {
           <Eyebrow>Dove siamo</Eyebrow>
 
           <div className="border-l-2 border-gold pl-6">
-            <div className="font-serif text-sm font-medium uppercase tracking-wide text-ink mb-2">
+            <div className="font-serif text-[15px] font-medium uppercase tracking-wide text-ink mb-2">
               Indirizzo
             </div>
             <div className="text-[15px] text-[#3a3020] leading-relaxed font-light">
@@ -49,7 +49,7 @@ export default function ContattiPage() {
           </div>
 
           <div className="border-l-2 border-gold pl-6">
-            <div className="font-serif text-sm font-medium uppercase tracking-wide text-ink mb-2">
+            <div className="font-serif text-[15px] font-medium uppercase tracking-wide text-ink mb-2">
               Email
             </div>
             <a
@@ -61,7 +61,7 @@ export default function ContattiPage() {
           </div>
 
           <div className="border-l-2 border-gold pl-6">
-            <div className="font-serif text-sm font-medium uppercase tracking-wide text-ink mb-2">
+            <div className="font-serif text-[15px] font-medium uppercase tracking-wide text-ink mb-2">
               Orari
             </div>
             <div className="text-[15px] text-[#3a3020] leading-relaxed font-light">
@@ -72,7 +72,7 @@ export default function ContattiPage() {
           </div>
 
           <div className="border-l-2 border-gold pl-6">
-            <div className="font-serif text-sm font-medium uppercase tracking-wide text-ink mb-2">
+            <div className="font-serif text-[15px] font-medium uppercase tracking-wide text-ink mb-2">
               PEC
             </div>
             <a
@@ -96,10 +96,10 @@ export default function ContattiPage() {
       </section>
 
       <section className="px-6 py-16 md:px-[60px] md:py-20 bg-white">
-        <h2 className="font-serif text-3xl md:text-[36px] font-light text-ink mb-2">
+        <h2 className="font-serif text-4xl md:text-[40px] font-light text-ink mb-2">
           Scrivici un messaggio
         </h2>
-        <p className="text-sm text-muted mb-10 md:mb-12">
+        <p className="text-[15px] text-muted mb-10 md:mb-12">
           Compila il modulo e ti risponderemo entro 24 ore.
         </p>
         <ContactForm />

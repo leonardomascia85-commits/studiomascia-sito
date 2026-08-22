@@ -47,19 +47,19 @@ export default function ServiziPage() {
               <h2 className="font-serif text-[26px] font-medium text-ink leading-tight mb-4">
                 {s.title}
               </h2>
-              <p className="text-[10px] tracking-[0.15em] uppercase text-gold">
+              <p className="text-[11px] tracking-[0.15em] uppercase text-gold">
                 {s.tag}
               </p>
             </div>
             <div className="px-6 py-12 md:px-[60px] md:py-16">
-              <p className="text-sm text-[#3a3020] leading-relaxed font-light mb-8">
+              <p className="text-[15px] text-[#3a3020] leading-relaxed font-light mb-8">
                 {s.description}
               </p>
               <ul className="flex flex-col gap-2.5 mb-8">
                 {s.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-[13px] text-[#5a5040] leading-snug font-light"
+                    className="flex items-start gap-3 text-[14.5px] text-[#5a5040] leading-snug font-light"
                   >
                     <span className="w-4 h-px bg-gold mt-2.5 shrink-0" />
                     {item}
@@ -68,7 +68,7 @@ export default function ServiziPage() {
               </ul>
               <Link
                 href="/contatti"
-                className="inline-block text-[11px] tracking-[0.12em] uppercase text-ink font-medium border-b border-gold pb-0.5 hover:text-gold"
+                className="inline-block text-[12px] tracking-[0.12em] uppercase text-ink font-medium border-b border-gold pb-0.5 hover:text-gold"
               >
                 Richiedi informazioni →
               </Link>

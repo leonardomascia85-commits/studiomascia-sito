@@ -99,7 +99,7 @@ export default function ChiSiamoPage() {
             <h3 className="font-serif text-[22px] font-medium text-ink mb-3">
               {v.title}
             </h3>
-            <p className="text-[13px] text-muted leading-relaxed font-light">
+            <p className="text-[14.5px] text-muted leading-relaxed font-light">
               {v.text}
             </p>
           </div>
@@ -114,10 +114,10 @@ export default function ChiSiamoPage() {
             <br />
             Mascia
           </h2>
-          <p className="text-[12px] tracking-[0.15em] uppercase text-white/40 mb-9">
+          <p className="text-[13px] tracking-[0.15em] uppercase text-white/40 mb-9">
             Dottore Commercialista · Revisore Legale
           </p>
-          <p className="text-sm text-white/60 leading-relaxed font-light mb-9">
+          <p className="text-[15px] text-white/60 leading-relaxed font-light mb-9">
             Laureato in Economia e Commercio, iscritto all&apos;Albo dei
             Dottori Commercialisti e Revisori Contabili. Dal 2012 guida lo
             Studio Mascia con rigore professionale e attenzione costante alle
@@ -137,7 +137,7 @@ export default function ChiSiamoPage() {
             ].map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] tracking-[0.12em] uppercase text-gold border border-gold/40 px-4 py-1.5"
+                className="text-[12px] tracking-[0.12em] uppercase text-gold border border-gold/40 px-4 py-1.5"
               >
                 {tag}
               </span>
@@ -157,10 +157,10 @@ export default function ChiSiamoPage() {
                   i === 0 ? "border-t" : ""
                 }`}
               >
-                <span className="font-serif text-sm text-gold min-w-[40px]">
+                <span className="font-serif text-[15px] text-gold min-w-[44px]">
                   {c.year}
                 </span>
-                <span className="text-[13px] text-[#3a3020] leading-snug font-light">
+                <span className="text-[14.5px] text-[#3a3020] leading-snug font-light">
                   {c.text}
                 </span>
               </li>
@@ -186,7 +186,7 @@ export default function ChiSiamoPage() {
                 <h4 className="font-serif text-xl font-medium text-ink mb-2">
                   {a.title}
                 </h4>
-                <p className="text-[13px] text-muted leading-relaxed font-light">
+                <p className="text-[14.5px] text-muted leading-relaxed font-light">
                   {a.text}
                 </p>
               </div>

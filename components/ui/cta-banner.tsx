@@ -23,7 +23,7 @@ export function CtaBanner({
       }`}
     >
       <h2
-        className={`font-serif text-3xl md:text-[38px] font-light leading-tight max-w-xl text-center md:text-left ${
+        className={`font-serif text-4xl md:text-[42px] font-light leading-tight max-w-xl text-center md:text-left ${
           dark ? "text-white" : "text-ink"
         }`}
       >
@@ -32,7 +32,7 @@ export function CtaBanner({
       <div className="flex flex-col items-center md:items-end gap-5 shrink-0">
         {description && (
           <p
-            className={`text-[13px] leading-relaxed ${
+            className={`text-[15px] leading-relaxed ${
               dark ? "text-white/40" : "text-muted"
             }`}
           >
@@ -41,7 +41,7 @@ export function CtaBanner({
         )}
         <Link
           href={buttonHref}
-          className={`text-[12px] font-medium tracking-[0.1em] uppercase px-9 py-4 whitespace-nowrap ${
+          className={`text-[13px] font-medium tracking-[0.1em] uppercase px-9 py-4 whitespace-nowrap ${
             dark
               ? "bg-gold text-ink hover:bg-[#d4b06a]"
               : "bg-ink text-white hover:bg-ink/90"

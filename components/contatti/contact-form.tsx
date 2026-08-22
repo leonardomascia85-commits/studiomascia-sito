@@ -14,8 +14,8 @@ const TOPICS = [
 ];
 
 const fieldClass =
-  "font-sans text-sm text-ink font-light px-[18px] py-3.5 border border-[#ddd6c8] bg-parchment outline-none focus:border-gold focus:bg-white transition-colors";
-const labelClass = "text-[11px] tracking-[0.12em] uppercase text-muted";
+  "font-sans text-[15px] text-ink font-light px-[18px] py-3.5 border border-[#ddd6c8] bg-parchment outline-none focus:border-gold focus:bg-white transition-colors";
+const labelClass = "text-[12px] tracking-[0.12em] uppercase text-muted";
 
 export function ContactForm() {
   const [state, action, pending] = useActionState<ContactState, FormData>(
@@ -25,7 +25,7 @@ export function ContactForm() {
 
   if (state?.success) {
     return (
-      <div className="bg-[#f0f7f0] border border-gold px-6 py-4 text-sm text-ink max-w-[800px]">
+      <div className="bg-[#f0f7f0] border border-gold px-6 py-4 text-[15px] text-ink max-w-[800px]">
         ✓ Messaggio inviato con successo! Ti risponderemo entro 24 ore.
       </div>
     );
@@ -102,18 +102,18 @@ export function ContactForm() {
       </div>
 
       {state?.error && (
-        <p className="md:col-span-2 text-sm text-red-700">{state.error}</p>
+        <p className="md:col-span-2 text-[15px] text-red-700">{state.error}</p>
       )}
 
       <div className="md:col-span-2 flex flex-wrap items-center justify-between gap-4 mt-2">
         <button
           type="submit"
           disabled={pending}
-          className="bg-ink text-white text-[12px] font-medium tracking-[0.1em] uppercase px-10 py-4 hover:bg-gold hover:text-ink transition-colors disabled:opacity-50"
+          className="bg-ink text-white text-[13px] font-medium tracking-[0.1em] uppercase px-10 py-4 hover:bg-gold hover:text-ink transition-colors disabled:opacity-50"
         >
           {pending ? "Invio in corso…" : "Invia messaggio"}
         </button>
-        <p className="text-[12px] text-[#aaa098] max-w-[400px] leading-relaxed">
+        <p className="text-[13px] text-[#aaa098] max-w-[400px] leading-relaxed">
           Inviando il modulo accetti il trattamento dei dati personali ai
           sensi del GDPR. I tuoi dati non saranno condivisi con terze parti.
         </p>

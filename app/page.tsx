@@ -34,13 +34,13 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-3.5">
               <Link
                 href="/contatti"
-                className="bg-gold text-ink text-[12px] font-medium tracking-[0.1em] uppercase px-7 py-3.5 hover:bg-[#d4b06a]"
+                className="bg-gold text-ink text-[13px] font-medium tracking-[0.1em] uppercase px-7 py-3.5 hover:bg-[#d4b06a]"
               >
                 Richiedi consulenza
               </Link>
               <Link
                 href="/servizi"
-                className="border border-white/20 text-white/70 text-[12px] tracking-[0.08em] uppercase px-6 py-3.5 hover:border-white/40 hover:text-white"
+                className="border border-white/20 text-white/70 text-[13px] tracking-[0.08em] uppercase px-6 py-3.5 hover:border-white/40 hover:text-white"
               >
                 I nostri servizi
               </Link>
@@ -54,7 +54,7 @@ export default function HomePage() {
               <div className="font-serif text-[40px] md:text-[48px] font-light text-ink leading-none tracking-tight">
                 {s.num}
               </div>
-              <div className="text-[13px] text-muted mt-1">{s.label}</div>
+              <div className="text-sm text-muted mt-1.5">{s.label}</div>
             </div>
           ))}
         </div>
@@ -63,7 +63,7 @@ export default function HomePage() {
       {/* SERVIZI */}
       <section className="px-6 py-16 md:px-[60px] md:py-24">
         <Eyebrow>Cosa facciamo</Eyebrow>
-        <h2 className="font-serif text-3xl md:text-[40px] font-light text-ink leading-tight mb-10 md:mb-12">
+        <h2 className="font-serif text-4xl md:text-[44px] font-light text-ink leading-tight mb-10 md:mb-12">
           I nostri servizi
           <br />
           di consulenza
@@ -74,13 +74,13 @@ export default function HomePage() {
               key={s.slug}
               className="group bg-white hover:bg-ink transition-colors px-9 py-10"
             >
-              <div className="font-serif text-[13px] text-gold/60 group-hover:text-gold/40 mb-5">
+              <div className="font-serif text-sm text-gold/60 group-hover:text-gold/40 mb-5">
                 {s.number}
               </div>
               <h3 className="font-serif text-xl font-medium text-ink group-hover:text-white transition-colors mb-3.5 leading-snug">
                 {s.title}
               </h3>
-              <p className="text-[13px] leading-relaxed text-[#7a7060] group-hover:text-white/55 transition-colors font-light">
+              <p className="text-[14.5px] leading-relaxed text-[#7a7060] group-hover:text-white/55 transition-colors font-light">
                 {s.homeSummary}
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function HomePage() {
       <section className="grid md:grid-cols-2 bg-ink">
         <div className="px-6 py-16 md:px-[60px] md:py-24 flex flex-col justify-center">
           <Eyebrow>Chi siamo</Eyebrow>
-          <h2 className="font-serif text-3xl md:text-[40px] font-light text-white leading-tight mb-5">
+          <h2 className="font-serif text-4xl md:text-[44px] font-light text-white leading-tight mb-5">
             Professionalità
             <br />e presenza
             <br />
@@ -112,7 +112,7 @@ export default function HomePage() {
           <h3 className="font-serif text-[32px] font-normal text-ink mb-1">
             {STUDIO_INFO.founder}
           </h3>
-          <p className="text-[12px] tracking-[0.15em] uppercase text-ink/60 mb-9">
+          <p className="text-[13px] tracking-[0.15em] uppercase text-ink/60 mb-9">
             Titolare · Commercialista · Revisore Legale
           </p>
           <ul className="flex flex-col gap-3.5">
@@ -123,7 +123,7 @@ export default function HomePage() {
               "Clienti nazionali e internazionali",
               "Studio fondato nel 2012 a Palma Campania",
             ].map((item) => (
-              <li key={item} className="flex items-center gap-3 text-sm text-ink">
+              <li key={item} className="flex items-center gap-3 text-[15px] text-ink">
                 <span className="w-5 h-px bg-ink/50 shrink-0" />
                 {item}
               </li>

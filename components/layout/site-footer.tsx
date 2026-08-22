@@ -7,7 +7,7 @@ export function SiteFooter() {
         <span className="font-serif text-lg tracking-wide text-white">
           Studio <span className="text-gold">Mascia</span>
         </span>
-        <p className="text-[12px] text-white/40 text-center sm:text-right leading-relaxed">
+        <p className="text-[13px] text-white/40 text-center sm:text-right leading-relaxed">
           {STUDIO_INFO.address} · {STUDIO_INFO.city}
           <br />
           {STUDIO_INFO.email} · © {new Date().getFullYear()}
