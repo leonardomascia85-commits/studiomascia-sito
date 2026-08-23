@@ -1,7 +1,9 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
+import Link from "next/link";
 import { sendContactMessage, type ContactState } from "@/app/contatti/actions";
+import { trackMetaEvent } from "@/lib/analytics/meta-pixel";
 
 const TOPICS = [
   "Consulenza fiscale e tributaria",
@@ -22,6 +24,12 @@ export function ContactForm() {
     sendContactMessage,
     undefined
   );
+
+  useEffect(() => {
+    if (state?.success) {
+      trackMetaEvent("Contact");
+    }
+  }, [state?.success]);
 
   if (state?.success) {
     return (
@@ -115,7 +123,11 @@ export function ContactForm() {
         </button>
         <p className="text-[13px] text-[#aaa098] max-w-[400px] leading-relaxed">
           Inviando il modulo accetti il trattamento dei dati personali ai
-          sensi del GDPR. I tuoi dati non saranno condivisi con terze parti.
+          sensi del GDPR. Consulta la{" "}
+          <Link href="/privacy" className="underline hover:text-muted">
+            Privacy Policy
+          </Link>
+          .
         </p>
       </div>
     </form>

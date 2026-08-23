@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resto-al-sud/questionario",
     "/news",
     "/contatti",
+    "/privacy",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),

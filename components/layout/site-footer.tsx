@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { STUDIO_INFO } from "@/lib/content/studio-info";
 
 export function SiteFooter() {
@@ -10,7 +11,10 @@ export function SiteFooter() {
         <p className="text-[13px] text-white/40 text-center sm:text-right leading-relaxed">
           {STUDIO_INFO.address} · {STUDIO_INFO.city}
           <br />
-          {STUDIO_INFO.email} · © {new Date().getFullYear()}
+          {STUDIO_INFO.email} · © {new Date().getFullYear()} ·{" "}
+          <Link href="/privacy" className="underline underline-offset-2 hover:text-white/70">
+            Privacy Policy
+          </Link>
         </p>
       </div>
     </footer>

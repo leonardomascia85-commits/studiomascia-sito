@@ -1,11 +1,13 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
+import Link from "next/link";
 import {
   sendQuestionario,
   type QuestionarioState,
 } from "@/app/resto-al-sud/questionario/actions";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { trackMetaEvent } from "@/lib/analytics/meta-pixel";
 import {
   ETA_OPTIONS,
   STATO_OCCUPAZIONALE_OPTIONS,
@@ -64,6 +66,12 @@ export function QuestionarioForm() {
     sendQuestionario,
     undefined
   );
+
+  useEffect(() => {
+    if (state?.success) {
+      trackMetaEvent("Lead");
+    }
+  }, [state?.success]);
 
   if (state?.success) {
     return (
@@ -213,7 +221,11 @@ export function QuestionarioForm() {
         </button>
         <p className="text-[13px] text-[#aaa098] max-w-[400px] leading-relaxed">
           Inviando il modulo accetti il trattamento dei dati personali ai
-          sensi del GDPR. I tuoi dati non saranno condivisi con terze parti.
+          sensi del GDPR. Consulta la{" "}
+          <Link href="/privacy" className="underline hover:text-muted">
+            Privacy Policy
+          </Link>
+          .
         </p>
       </div>
     </form>
