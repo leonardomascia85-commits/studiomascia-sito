@@ -69,7 +69,7 @@ export default function RestoAlSudPage() {
               href="/resto-al-sud/questionario"
               className="text-[13px] text-gold underline underline-offset-2 hover:text-ink"
             >
-              Rispondi a 6 domande veloci e ti richiamiamo noi →
+              Rispondi a poche domande veloci e ti richiamiamo noi →
             </a>
           </div>
           <a

@@ -24,6 +24,45 @@ export const REGIONE_OPTIONS = [
   "Altra regione",
 ] as const;
 
+export const RESIDENZA_OPTIONS = [
+  "Abruzzo",
+  "Basilicata",
+  "Calabria",
+  "Campania",
+  "Molise",
+  "Puglia",
+  "Sardegna",
+  "Sicilia",
+  "Altra regione italiana",
+  "Estero",
+] as const;
+
+export const GOL_OPTIONS = ["Sì", "No", "Non so cos'è"] as const;
+
+export const CUMULABILITA_OPTIONS = [
+  "No, nessun altro contributo",
+  "Sì, ho già altre agevolazioni",
+  "Non so",
+] as const;
+
+export const SOCI_OPTIONS = ["Da solo/a", "Con uno o più soci"] as const;
+
+export const PIVA_OPTIONS = ["Sì, già aperta", "No, non ancora"] as const;
+
+export const INVESTIMENTO_OPTIONS = [
+  "Fino a 20.000 €",
+  "20.000 – 50.000 €",
+  "50.000 – 120.000 €",
+  "120.000 – 200.000 €",
+  "Non so ancora",
+] as const;
+
+export const ESPERIENZA_OPTIONS = [
+  "Sì, esperienza lavorativa diretta",
+  "Studi o formazione nel settore",
+  "Nessuna esperienza specifica",
+] as const;
+
 export const SETTORE_OPTIONS = [
   "Commercio",
   "Artigianato",

@@ -5,16 +5,31 @@ import { STUDIO_INFO } from "@/lib/content/studio-info";
 
 export type QuestionarioState = { success?: boolean; error?: string } | undefined;
 
-const REQUIRED_FIELDS = [
-  "name",
-  "phone",
-  "email",
+const REQUISITI_FIELDS = [
   "eta",
   "statoOccupazionale",
+  "residenza",
   "regione",
-  "settore",
   "statoIniziativa",
+  "gol",
+  "cumulabilita",
+] as const;
+
+const PROGETTO_FIELDS = [
+  "settore",
   "formaGiuridica",
+  "soci",
+  "piva",
+  "investimento",
+  "esperienza",
+] as const;
+
+const CONTATTO_FIELDS = ["name", "phone", "email"] as const;
+
+const REQUIRED_FIELDS = [
+  ...CONTATTO_FIELDS,
+  ...REQUISITI_FIELDS,
+  ...PROGETTO_FIELDS,
 ] as const;
 
 const FIELD_LABELS: Record<(typeof REQUIRED_FIELDS)[number], string> = {
@@ -23,11 +38,25 @@ const FIELD_LABELS: Record<(typeof REQUIRED_FIELDS)[number], string> = {
   email: "Email",
   eta: "Età",
   statoOccupazionale: "Stato occupazionale",
-  regione: "Regione",
-  settore: "Settore del progetto",
+  residenza: "Regione di residenza attuale",
+  regione: "Regione dell'iniziativa",
   statoIniziativa: "Stato dell'iniziativa",
+  gol: "Aderente al Programma GOL",
+  cumulabilita: "Altri contributi già ricevuti",
+  settore: "Settore del progetto",
   formaGiuridica: "Forma giuridica prevista",
+  soci: "Da solo o con soci",
+  piva: "Partita IVA già aperta",
+  investimento: "Investimento previsto",
+  esperienza: "Esperienza nel settore",
 };
+
+function formatBlock(
+  values: Record<(typeof REQUIRED_FIELDS)[number], string>,
+  fields: readonly (typeof REQUIRED_FIELDS)[number][]
+) {
+  return fields.map((field) => `${FIELD_LABELS[field]}: ${values[field]}`).join("\n");
+}
 
 export async function sendQuestionario(
   _prevState: QuestionarioState,
@@ -42,9 +71,11 @@ export async function sendQuestionario(
     return { error: "Rispondi a tutte le domande prima di inviare il questionario." };
   }
 
-  const summary = REQUIRED_FIELDS.map(
-    (field) => `${FIELD_LABELS[field]}: ${values[field]}`
-  ).join("\n");
+  const summary = [
+    `Contatto:\n${formatBlock(values, CONTATTO_FIELDS)}`,
+    `Requisiti del bando:\n${formatBlock(values, REQUISITI_FIELDS)}`,
+    `Progetto:\n${formatBlock(values, PROGETTO_FIELDS)}`,
+  ].join("\n\n");
 
   try {
     const resend = getResendClient();
