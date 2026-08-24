@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { AlertTriangle, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { AlertTriangle, ArrowRight, ExternalLink } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import {
   PRINCIPIO_GENERALE,
@@ -155,6 +156,23 @@ export default function GestioneIvaPage() {
             </h2>
             <p className="text-[14px] text-muted leading-relaxed">{IRAP.text}</p>
           </div>
+        </div>
+
+        <div className="border-t border-line pt-10">
+          <Link
+            href="/gestione-iva/cessione-credito"
+            className="flex items-center justify-between gap-3 bg-parchment border-l-2 border-gold px-6 py-5 hover:bg-cream transition-colors"
+          >
+            <div>
+              <h2 className="font-serif text-lg font-medium text-ink mb-1">
+                Cessione del Credito IVA
+              </h2>
+              <p className="text-[13px] text-muted">
+                Requisiti, procedura e documenti per la cessione a terzi.
+              </p>
+            </div>
+            <ArrowRight size={18} className="text-gold shrink-0" />
+          </Link>
         </div>
 
         <div className="border-t border-line pt-10">
