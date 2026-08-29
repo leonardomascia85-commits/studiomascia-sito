@@ -1,6 +1,6 @@
-import { AlertTriangle, ExternalLink } from "lucide-react";
+import { AlertTriangle, ArrowRight, ExternalLink } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { ValutazioneForm } from "@/components/debiti-fiscali/valutazione-form";
+import { ValutazioneForm } from "@/components/contenzioso-tributario/valutazione-form";
 import { buildMetadata } from "@/lib/seo";
 import {
   PERCORSI,
@@ -13,18 +13,18 @@ import {
   ITER_STEPS,
   AVVISO_CLIENTE,
   NORMATIVA_REFS,
-} from "@/lib/content/debiti-fiscali";
+} from "@/lib/content/contenzioso-tributario";
 
 export const metadata = buildMetadata({
-  title: "Debiti Fiscali e Cartelle Esattoriali",
+  title: "Contenzioso Tributario",
   description:
     "Contenzioso tributario, sovraindebitamento, analisi e annullamento cartelle esattoriali: tre percorsi per aziende e privati. Invia i tuoi documenti per una prima valutazione gratuita.",
-  path: "/debiti-fiscali",
+  path: "/contenzioso-tributario",
 });
 
 const [PERCORSO_CONTENZIOSO, PERCORSO_SOVRAINDEBITAMENTO, PERCORSO_CARTELLE] = PERCORSI;
 
-export default function DebitiFiscaliPage() {
+export default function ContenziosoTributarioPage() {
   return (
     <>
       <section className="bg-ink px-6 py-16 md:px-[60px] md:py-24 grid md:grid-cols-2 gap-10 md:gap-20 items-end">
@@ -44,18 +44,33 @@ export default function DebitiFiscaliPage() {
       </section>
 
       <section className="grid md:grid-cols-3 gap-px bg-line">
-        {PERCORSI.map((p) => (
-          <div key={p.slug} className="bg-parchment px-6 py-10 md:px-8">
-            <h2 className="font-serif text-xl font-medium text-ink mb-2">
+        {PERCORSI.map((p, i) => (
+          <a
+            key={p.slug}
+            href={`#${p.slug}`}
+            className="group bg-parchment hover:bg-ink border-t-4 border-gold px-6 py-10 md:px-8 transition-colors"
+          >
+            <div className="flex items-center justify-between gap-3 mb-3">
+              <span className="font-serif text-[13px] text-gold/70 group-hover:text-gold">
+                Percorso {i + 1}
+              </span>
+              <ArrowRight
+                size={18}
+                className="text-gold shrink-0 transition-transform group-hover:translate-x-1"
+              />
+            </div>
+            <h2 className="font-serif text-2xl font-medium text-ink group-hover:text-white transition-colors mb-3">
               {p.title}
             </h2>
-            <p className="text-[13px] text-muted leading-relaxed">{p.intro}</p>
-          </div>
+            <p className="text-[14px] text-muted group-hover:text-white/60 leading-relaxed transition-colors">
+              {p.intro}
+            </p>
+          </a>
         ))}
       </section>
 
       {/* PERCORSO 1 — CONTENZIOSO TRIBUTARIO */}
-      <section className="px-6 py-20 md:px-[60px] md:py-28">
+      <section id={PERCORSO_CONTENZIOSO.slug} className="px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px]">
         <Eyebrow>Percorso 1</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
           {PERCORSO_CONTENZIOSO.title}
@@ -80,7 +95,7 @@ export default function DebitiFiscaliPage() {
       </section>
 
       {/* PERCORSO 2 — SOVRAINDEBITAMENTO */}
-      <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
+      <section id={PERCORSO_SOVRAINDEBITAMENTO.slug} className="bg-parchment px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px]">
         <Eyebrow>Percorso 2</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
           {PERCORSO_SOVRAINDEBITAMENTO.title}
@@ -122,7 +137,7 @@ export default function DebitiFiscaliPage() {
       </section>
 
       {/* PERCORSO 3 — ANNULLAMENTO CARTELLE */}
-      <section className="bg-cream px-6 py-20 md:px-[60px] md:py-28">
+      <section id={PERCORSO_CARTELLE.slug} className="bg-cream px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px]">
         <Eyebrow>Percorso 3</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
           {PERCORSO_CARTELLE.title}

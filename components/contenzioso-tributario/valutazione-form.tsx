@@ -2,9 +2,9 @@
 
 import { useActionState, useEffect } from "react";
 import Link from "next/link";
-import { sendValutazione, type ValutazioneState } from "@/app/debiti-fiscali/actions";
+import { sendValutazione, type ValutazioneState } from "@/app/contenzioso-tributario/actions";
 import { trackMetaEvent } from "@/lib/analytics/meta-pixel";
-import { GUIDA_SITUAZIONE_DEBITORIA } from "@/lib/content/debiti-fiscali";
+import { GUIDA_SITUAZIONE_DEBITORIA } from "@/lib/content/contenzioso-tributario";
 
 const fieldClass =
   "font-sans text-[15px] text-ink font-light px-[18px] py-3.5 border border-[#ddd6c8] bg-parchment outline-none focus:border-gold focus:bg-white transition-colors";

@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { href: "/chi-siamo", label: "Chi Siamo" },
   { href: "/servizi", label: "Servizi" },
   { href: "/resto-al-sud", label: "Resto al Sud" },
-  { href: "/debiti-fiscali", label: "Debiti Fiscali" },
+  { href: "/contenzioso-tributario", label: "Contenzioso Tributario" },
   { href: "/news", label: "News" },
 ];
 

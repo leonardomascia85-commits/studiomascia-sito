@@ -51,8 +51,8 @@ export async function sendValutazione(
       from: `Sito Studio Mascia <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
       to: STUDIO_INFO.email,
       replyTo: email,
-      subject: `Richiesta di valutazione — Debiti Fiscali — ${nome} ${cognome}`,
-      text: `Nuova richiesta di prima valutazione gratuita dalla pagina Debiti Fiscali.\n\nNome: ${nome}\nCognome: ${cognome}\nEmail: ${email}\n\nMessaggio:\n${messaggio || "-"}\n\nDocumenti allegati: ${
+      subject: `Richiesta di valutazione — Contenzioso Tributario — ${nome} ${cognome}`,
+      text: `Nuova richiesta di prima valutazione gratuita dalla pagina Contenzioso Tributario.\n\nNome: ${nome}\nCognome: ${cognome}\nEmail: ${email}\n\nMessaggio:\n${messaggio || "-"}\n\nDocumenti allegati: ${
         files.length > 0 ? files.map((f) => f.name).join(", ") : "nessuno"
       }`,
       attachments: attachments.length > 0 ? attachments : undefined,

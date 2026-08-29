@@ -84,7 +84,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong className="text-ink">
-                Modulo di prima valutazione (Debiti Fiscali):
+                Modulo di prima valutazione (Contenzioso Tributario):
               </strong>{" "}
               nome, cognome, email, un messaggio libero facoltativo e i
               documenti che scegli di allegare (ad es. cartelle esattoriali,

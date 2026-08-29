@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "25mb",
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/debiti-fiscali",
+        destination: "/contenzioso-tributario",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
