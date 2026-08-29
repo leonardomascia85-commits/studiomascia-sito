@@ -24,9 +24,51 @@ export const metadata = buildMetadata({
 
 const [PERCORSO_CONTENZIOSO, PERCORSO_SOVRAINDEBITAMENTO, PERCORSO_CARTELLE] = PERCORSI;
 
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Cos'è il contenzioso tributario e chi può usufruirne?",
+      acceptedAnswer: { "@type": "Answer", text: PERCORSO_CONTENZIOSO.intro },
+    },
+    {
+      "@type": "Question",
+      name: "Cos'è il sovraindebitamento?",
+      acceptedAnswer: { "@type": "Answer", text: PERCORSO_SOVRAINDEBITAMENTO.intro },
+    },
+    {
+      "@type": "Question",
+      name: "Quando si può annullare una cartella esattoriale?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `${PERCORSO_CARTELLE.intro} I motivi più comuni sono: ${MOTIVI_ANNULLAMENTO.map((m) => m.title.toLowerCase()).join(", ")}.`,
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quanto tempo ho per fare ricorso contro una cartella esattoriale?",
+      acceptedAnswer: { "@type": "Answer", text: TERMINI_RICORSO.text },
+    },
+    {
+      "@type": "Question",
+      name: "La prima valutazione dei documenti è davvero gratuita?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sì: puoi inviarci le tue cartelle, la tua situazione debitoria o altri documenti tramite il modulo in fondo alla pagina e ricevi una prima valutazione e un preventivo senza alcun impegno.",
+      },
+    },
+  ],
+};
+
 export default function ContenziosoTributarioPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
       <section className="bg-ink px-6 py-16 md:px-[60px] md:py-24 grid md:grid-cols-2 gap-10 md:gap-20 items-end">
         <div>
           <Eyebrow>Contenzioso Tributario</Eyebrow>
