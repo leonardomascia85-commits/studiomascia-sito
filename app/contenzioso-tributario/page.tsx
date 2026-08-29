@@ -1,4 +1,4 @@
-import { AlertTriangle, ArrowRight, ExternalLink } from "lucide-react";
+import { AlertTriangle, ArrowRight, ExternalLink, FileCheck } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { ValutazioneForm } from "@/components/contenzioso-tributario/valutazione-form";
 import { buildMetadata } from "@/lib/seo";
@@ -68,6 +68,28 @@ export default function ContenziosoTributarioPage() {
           </a>
         ))}
       </section>
+
+      {/* CTA VALUTAZIONE — IN EVIDENZA SUBITO */}
+      <a
+        href="#valutazione"
+        className="group flex flex-col sm:flex-row items-center justify-between gap-6 bg-gold px-6 py-8 md:px-[60px] hover:bg-[#d4b06a] transition-colors"
+      >
+        <div className="flex items-center gap-4 text-center sm:text-left">
+          <FileCheck size={28} className="text-ink shrink-0 hidden sm:block" />
+          <div>
+            <p className="font-serif text-xl md:text-2xl font-medium text-ink">
+              Non sai da dove iniziare? Inviaci subito i tuoi documenti.
+            </p>
+            <p className="text-[13px] text-ink/70 mt-1">
+              Prima valutazione e preventivo, gratuiti e senza impegno.
+            </p>
+          </div>
+        </div>
+        <span className="flex items-center gap-2 bg-ink text-white text-[13px] font-medium tracking-[0.1em] uppercase px-8 py-4 whitespace-nowrap shrink-0 group-hover:bg-ink/90">
+          Vai al modulo
+          <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+        </span>
+      </a>
 
       {/* PERCORSO 1 — CONTENZIOSO TRIBUTARIO */}
       <section id={PERCORSO_CONTENZIOSO.slug} className="px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px]">
@@ -223,19 +245,24 @@ export default function ContenziosoTributarioPage() {
       </section>
 
       {/* VALUTAZIONE GRATUITA */}
-      <section className="bg-ink px-6 py-20 md:px-[60px] md:py-28">
+      <section id="valutazione" className="bg-ink px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px] border-t-4 border-gold">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="bg-gold text-ink text-[11px] font-semibold tracking-[0.14em] uppercase px-4 py-1.5">
+            Gratuita · Senza impegno
+          </span>
+        </div>
         <Eyebrow>Prima valutazione gratuita</Eyebrow>
-        <h2 className="font-serif text-4xl md:text-[42px] font-light text-white leading-tight mb-4 max-w-2xl">
+        <h2 className="font-serif text-4xl md:text-[48px] font-light text-white leading-tight mb-4 max-w-2xl">
           Inviaci i tuoi documenti,
           <br />
           <em className="text-gold">ti diciamo come stanno le cose.</em>
         </h2>
-        <p className="text-[15px] text-white/55 leading-relaxed max-w-2xl mb-14 font-light">
+        <p className="text-[16px] text-white/60 leading-relaxed max-w-2xl mb-14 font-light">
           Compila il modulo con i tuoi dati, allega le cartelle o la tua
           situazione debitoria e scrivici in libertà: ti rispondiamo con una
           prima valutazione e un preventivo, senza impegno.
         </p>
-        <div className="bg-white px-6 py-10 md:px-12 md:py-14">
+        <div className="bg-white px-6 py-10 md:px-12 md:py-14 shadow-[0_0_0_1px_rgba(196,160,90,0.3)]">
           <ValutazioneForm />
         </div>
       </section>
