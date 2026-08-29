@@ -1,6 +1,6 @@
 import { AlertTriangle, ExternalLink } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { CtaBanner } from "@/components/ui/cta-banner";
+import { ValutazioneForm } from "@/components/debiti-fiscali/valutazione-form";
 import { buildMetadata } from "@/lib/seo";
 import {
   PERCORSI,
@@ -18,9 +18,11 @@ import {
 export const metadata = buildMetadata({
   title: "Debiti Fiscali e Cartelle Esattoriali",
   description:
-    "Cartelle esattoriali troppo alte? Analizziamo i vizi che permettono di annullarle e valutiamo il sovraindebitamento per chi non riesce più a sostenere i propri debiti.",
+    "Contenzioso tributario, sovraindebitamento, analisi e annullamento cartelle esattoriali: tre percorsi per aziende e privati. Invia i tuoi documenti per una prima valutazione gratuita.",
   path: "/debiti-fiscali",
 });
+
+const [PERCORSO_CONTENZIOSO, PERCORSO_SOVRAINDEBITAMENTO, PERCORSO_CARTELLE] = PERCORSI;
 
 export default function DebitiFiscaliPage() {
   return (
@@ -35,32 +37,61 @@ export default function DebitiFiscaliPage() {
           </h1>
         </div>
         <p className="text-[15px] leading-relaxed text-white/55 border-l-2 border-gold/30 pl-6 font-light">
-          Analizziamo le tue cartelle esattoriali per verificare se esistono
-          vizi che ne permettono l&apos;annullamento, e valutiamo insieme se il
-          sovraindebitamento è la strada giusta per te.
+          Aziende, professionisti e privati: tre percorsi per affrontare
+          cartelle esattoriali, accertamenti e debiti che hanno superato la
+          soglia della sostenibilità.
         </p>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-px bg-line">
+      <section className="grid md:grid-cols-3 gap-px bg-line">
         {PERCORSI.map((p) => (
-          <div key={p.title} className="bg-parchment px-6 py-10 md:px-12">
-            <h2 className="font-serif text-2xl font-medium text-ink mb-2">
+          <div key={p.slug} className="bg-parchment px-6 py-10 md:px-8">
+            <h2 className="font-serif text-xl font-medium text-ink mb-2">
               {p.title}
             </h2>
-            <p className="text-[15px] text-muted leading-relaxed">{p.note}</p>
+            <p className="text-[13px] text-muted leading-relaxed">{p.intro}</p>
           </div>
         ))}
       </section>
 
-      {/* SOVRAINDEBITAMENTO */}
+      {/* PERCORSO 1 — CONTENZIOSO TRIBUTARIO */}
       <section className="px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>Sovraindebitamento</Eyebrow>
-        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-12">
-          Tre procedure possibili
+        <Eyebrow>Percorso 1</Eyebrow>
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
+          {PERCORSO_CONTENZIOSO.title}
         </h2>
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <p className="text-[16px] text-[#3a3020] leading-relaxed font-light max-w-2xl mb-10">
+          {PERCORSO_CONTENZIOSO.intro}
+        </p>
+        <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-1 mb-10">
+          {PERCORSO_CONTENZIOSO.items.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 text-base text-[#3a3020] py-3 border-b border-line"
+            >
+              <span className="w-4 h-px bg-gold mt-3 shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="font-serif italic text-lg text-gold leading-relaxed max-w-2xl">
+          {PERCORSO_CONTENZIOSO.chiusura}
+        </p>
+      </section>
+
+      {/* PERCORSO 2 — SOVRAINDEBITAMENTO */}
+      <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
+        <Eyebrow>Percorso 2</Eyebrow>
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
+          {PERCORSO_SOVRAINDEBITAMENTO.title}
+        </h2>
+        <p className="text-[16px] text-[#3a3020] leading-relaxed font-light max-w-2xl mb-10">
+          {PERCORSO_SOVRAINDEBITAMENTO.intro}
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
           {PROCEDURE_SOVRAINDEBITAMENTO.map((p) => (
-            <div key={p.title} className="bg-parchment border-t-4 border-gold px-8 py-10">
+            <div key={p.title} className="bg-white border-t-4 border-gold px-8 py-10">
               <h3 className="font-serif text-lg font-medium text-ink mb-3">
                 {p.title}
               </h3>
@@ -81,18 +112,26 @@ export default function DebitiFiscaliPage() {
           </p>
         </div>
 
-        <p className="text-[14px] text-muted leading-relaxed max-w-2xl">
+        <p className="text-[14px] text-muted leading-relaxed max-w-2xl mb-10">
           {OCC_NOTA}
+        </p>
+
+        <p className="font-serif italic text-lg text-gold leading-relaxed max-w-2xl">
+          {PERCORSO_SOVRAINDEBITAMENTO.chiusura}
         </p>
       </section>
 
-      {/* CARTELLE */}
-      <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>Cartelle esattoriali</Eyebrow>
-        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-12">
-          Quando si possono annullare
+      {/* PERCORSO 3 — ANNULLAMENTO CARTELLE */}
+      <section className="bg-cream px-6 py-20 md:px-[60px] md:py-28">
+        <Eyebrow>Percorso 3</Eyebrow>
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
+          {PERCORSO_CARTELLE.title}
         </h2>
-        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6 mb-16">
+        <p className="text-[16px] text-[#3a3020] leading-relaxed font-light max-w-2xl mb-10">
+          {PERCORSO_CARTELLE.intro}
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6 mb-10">
           {MOTIVI_ANNULLAMENTO.map((m) => (
             <div key={m.title} className="border-l-2 border-gold pl-6">
               <h3 className="font-serif text-lg font-medium text-ink mb-2">
@@ -103,7 +142,7 @@ export default function DebitiFiscaliPage() {
           ))}
         </div>
 
-        <div className="border-l-2 border-gold pl-6 mb-10">
+        <div className="border-l-2 border-gold pl-6 mb-8">
           <h3 className="font-serif text-xl font-medium text-ink mb-2">
             {TERMINI_RICORSO.title}
           </h3>
@@ -112,16 +151,20 @@ export default function DebitiFiscaliPage() {
           </p>
         </div>
 
-        <div className="flex items-start gap-3 bg-gold/10 border border-gold/30 px-5 py-4 max-w-2xl">
+        <div className="flex items-start gap-3 bg-gold/10 border border-gold/30 px-5 py-4 max-w-2xl mb-10">
           <AlertTriangle size={18} className="text-gold shrink-0 mt-0.5" />
           <p className="text-[13px] text-[#7a5c1e] leading-relaxed">
             {ROTTAMAZIONE_NOTA}
           </p>
         </div>
+
+        <p className="font-serif italic text-lg text-[#8a6a1e] leading-relaxed max-w-2xl">
+          {PERCORSO_CARTELLE.chiusura}
+        </p>
       </section>
 
       {/* ITER */}
-      <section className="bg-cream px-6 py-20 md:px-[60px] md:py-28">
+      <section className="px-6 py-20 md:px-[60px] md:py-28">
         <Eyebrow>Come funziona</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-14">
           Il percorso, passo dopo passo
@@ -146,7 +189,7 @@ export default function DebitiFiscaliPage() {
       </section>
 
       {/* NORMATIVA */}
-      <section className="px-6 py-20 md:px-[60px] md:py-28">
+      <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
         <Eyebrow>Riferimenti normativi</Eyebrow>
         <div className="flex flex-col gap-2 max-w-2xl">
           {NORMATIVA_REFS.map((n) => (
@@ -164,25 +207,23 @@ export default function DebitiFiscaliPage() {
         </div>
       </section>
 
-      <CtaBanner
-        variant="dark"
-        title={
-          <>
-            Vuoi sapere se
-            <br />
-            <em className="text-gold">puoi liberartene?</em>
-          </>
-        }
-        description={
-          <>
-            Prima analisi senza impegno.
-            <br />
-            Ti diciamo con chiarezza qual è la strada realistica.
-          </>
-        }
-        buttonLabel="Contattaci"
-        buttonHref="/contatti"
-      />
+      {/* VALUTAZIONE GRATUITA */}
+      <section className="bg-ink px-6 py-20 md:px-[60px] md:py-28">
+        <Eyebrow>Prima valutazione gratuita</Eyebrow>
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-white leading-tight mb-4 max-w-2xl">
+          Inviaci i tuoi documenti,
+          <br />
+          <em className="text-gold">ti diciamo come stanno le cose.</em>
+        </h2>
+        <p className="text-[15px] text-white/55 leading-relaxed max-w-2xl mb-14 font-light">
+          Compila il modulo con i tuoi dati, allega le cartelle o la tua
+          situazione debitoria e scrivici in libertà: ti rispondiamo con una
+          prima valutazione e un preventivo, senza impegno.
+        </p>
+        <div className="bg-white px-6 py-10 md:px-12 md:py-14">
+          <ValutazioneForm />
+        </div>
+      </section>
     </>
   );
 }

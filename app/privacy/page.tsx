@@ -82,6 +82,14 @@ export default function PrivacyPage() {
               soci, Partita IVA, fascia di investimento ed esperienza nel
               settore.
             </li>
+            <li>
+              <strong className="text-ink">
+                Modulo di prima valutazione (Debiti Fiscali):
+              </strong>{" "}
+              nome, cognome, email, un messaggio libero facoltativo e i
+              documenti che scegli di allegare (ad es. cartelle esattoriali,
+              situazione debitoria, altri documenti fiscali).
+            </li>
           </ul>
           <p>
             Non raccogliamo categorie particolari di dati (art. 9 GDPR) né
@@ -104,6 +112,14 @@ export default function PrivacyPage() {
               del bando Resto al Sud 2.0 e ricontattarti telefonicamente per
               approfondire — base giuridica: consenso dell&apos;interessato
               (art. 6.1.a GDPR), espresso inviando il questionario.
+            </li>
+            <li>
+              Effettuare una prima valutazione gratuita della tua situazione
+              debitoria o delle tue cartelle esattoriali sulla base dei
+              documenti che ci invii, e fornirti un preventivo — base
+              giuridica: consenso dell&apos;interessato (art. 6.1.a GDPR),
+              espresso con la casella di consenso del modulo, ed esecuzione di
+              misure precontrattuali (art. 6.1.b GDPR).
             </li>
           </ul>
         </Section>

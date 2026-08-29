@@ -5,12 +5,36 @@
 
 export const PERCORSI = [
   {
-    title: "Sovraindebitamento",
-    note: "Per chi non riesce più a sostenere i propri debiti, anche verso più creditori.",
+    slug: "contenzioso",
+    title: "Contenzioso Tributario",
+    intro:
+      "Hai ricevuto una cartella di pagamento, un accertamento o un avviso di addebito? Che tu sia un'azienda, un libero professionista o un privato, ti affianchiamo in ogni fase del contenzioso con l'Agenzia delle Entrate e gli altri enti impositivi.",
+    items: [
+      "Assistenza in caso di accertamenti fiscali",
+      "Ricorsi alla Corte di Giustizia Tributaria di 1° e 2° grado",
+      "Istanze di accertamento con adesione e mediazione tributaria",
+      "Rateizzazione dei debiti con l'Agenzia delle Entrate-Riscossione",
+      "Gestione di cartelle esattoriali e avvisi di addebito",
+      "Difesa in ogni grado di giudizio",
+    ],
+    chiusura:
+      "Una prima valutazione ci permette di capire subito se conviene fare ricorso, chiedere una rateizzazione o percorrere un'altra strada — a prescindere da chi sia il debitore.",
   },
   {
-    title: "Analisi e annullamento cartelle",
-    note: "Per verificare se una o più cartelle esattoriali presentano vizi che ne permettono l'annullamento.",
+    slug: "sovraindebitamento",
+    title: "Sovraindebitamento",
+    intro:
+      "Se i debiti hanno superato la tua capacità di pagarli, la legge ti offre una via d'uscita concreta: le procedure di sovraindebitamento permettono di ristrutturarli, rateizzarli o in alcuni casi azzerarli, con la protezione del tribunale.",
+    chiusura:
+      "Ti aiutiamo a costruire la pratica insieme a un Organismo di Composizione della Crisi (OCC) e a scegliere la procedura più adatta alla tua situazione.",
+  },
+  {
+    slug: "annullamento-cartelle",
+    title: "Analisi e Annullamento Cartelle",
+    intro:
+      "Prima di pagare, verifica se la cartella è davvero dovuta: molte presentano vizi di notifica, termini scaduti o errori che ne permettono l'annullamento totale o parziale.",
+    chiusura:
+      "Un'analisi tecnica della cartella richiede pochi giorni: se troviamo un vizio, presentiamo ricorso; se la cartella è corretta, te lo diciamo con altrettanta chiarezza.",
   },
 ] as const;
 
@@ -76,18 +100,18 @@ export const ROTTAMAZIONE_NOTA =
 export const ITER_STEPS = [
   {
     num: "01",
-    title: "Analisi delle cartelle",
-    text: "Verifichiamo notifiche, importi e termini di ogni cartella per individuare eventuali vizi.",
+    title: "Analisi del caso",
+    text: "Esaminiamo cartelle, accertamenti o la situazione debitoria complessiva per capire cosa c'è in gioco.",
   },
   {
     num: "02",
-    title: "Valutazione del percorso",
-    text: "Cartelle con vizi → ricorso. Debiti sostenibili solo in parte → valutazione con un OCC per il sovraindebitamento.",
+    title: "Individuazione del percorso",
+    text: "Cartelle con vizi → ricorso. Debiti sostenibili solo in parte → sovraindebitamento. Accertamenti o altre contestazioni → contenzioso tributario.",
   },
   {
     num: "03",
     title: "Azione",
-    text: "Presentazione del ricorso entro i termini, oppure avvio della procedura di sovraindebitamento più adatta.",
+    text: "Presentazione del ricorso entro i termini, avvio della procedura di sovraindebitamento più adatta, o gestione diretta del contenzioso.",
   },
   {
     num: "04",
@@ -98,6 +122,18 @@ export const ITER_STEPS = [
 
 export const AVVISO_CLIENTE =
   "Non tutte le cartelle presentano vizi che ne permettono l'annullamento, e il sovraindebitamento è una procedura giudiziale il cui esito dipende dal tribunale: per questo iniziamo sempre con un'analisi del caso concreto, prima di indicare la strada più realistica.";
+
+export const GUIDA_SITUAZIONE_DEBITORIA = {
+  title: "Come scaricare la tua situazione debitoria",
+  steps: [
+    "Vai su agenziaentrateriscossione.gov.it e clicca su \"Area Riservata\".",
+    "Accedi con SPID, CIE o CNS (professionisti e imprese possono usare anche le credenziali dell'Agenzia delle Entrate).",
+    "Nel menu dell'area riservata seleziona il servizio \"Situazione debitoria – consulta e paga\".",
+    "Troverai l'elenco di cartelle e avvisi (pagati, sospesi, da pagare): scarica il documento riepilogativo da allegare qui sotto.",
+  ],
+  nota: "Le voci del menu del portale possono cambiare nel tempo: se non trovi subito la sezione, la funzione di ricerca interna del sito ti aiuta a individuarla.",
+  url: "https://www.agenziaentrateriscossione.gov.it",
+} as const;
 
 export const NORMATIVA_REFS = [
   {
