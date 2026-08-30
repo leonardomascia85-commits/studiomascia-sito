@@ -40,7 +40,14 @@ export function ValutazioneForm() {
             <label className={labelClass} htmlFor="nome">
               Nome *
             </label>
-            <input id="nome" name="nome" required placeholder="Mario" className={fieldClass} />
+            <input
+              id="nome"
+              name="nome"
+              type="text"
+              required
+              placeholder="Mario"
+              className={fieldClass}
+            />
           </div>
           <div className="flex flex-col gap-2">
             <label className={labelClass} htmlFor="cognome">
@@ -49,6 +56,7 @@ export function ValutazioneForm() {
             <input
               id="cognome"
               name="cognome"
+              type="text"
               required
               placeholder="Rossi"
               className={fieldClass}

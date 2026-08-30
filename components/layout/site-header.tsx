@@ -52,6 +52,7 @@ export function SiteHeader() {
         </nav>
 
         <button
+          type="button"
           className="md:hidden text-white"
           onClick={() => setOpen((o) => !o)}
           aria-label="Apri menu"

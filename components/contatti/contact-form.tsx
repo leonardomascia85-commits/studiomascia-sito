@@ -48,6 +48,7 @@ export function ContactForm() {
         <input
           id="name"
           name="name"
+          type="text"
           required
           placeholder="Mario Rossi"
           className={fieldClass}
@@ -73,6 +74,7 @@ export function ContactForm() {
         <input
           id="company"
           name="company"
+          type="text"
           placeholder="Rossi Srl · IT01234567890"
           className={fieldClass}
         />

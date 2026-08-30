@@ -175,6 +175,7 @@ export function QuestionarioForm() {
             <input
               id="name"
               name="name"
+              type="text"
               required
               placeholder="Mario Rossi"
               className={fieldClass}
