@@ -22,6 +22,7 @@ export const TAGS = [
   "Lavoro e Assunzioni",
   "Startup e Innovazione",
   "Bilanci",
+  "Giurisprudenza Fiscale",
 ] as const;
 
 export function tagToSlug(tag: string): string {
@@ -415,6 +416,51 @@ export const NEWS: NewsItem[] = [
       label: "Agenzia delle Entrate-Riscossione",
       url: "https://www.agenziaentrateriscossione.gov.it",
     },
+  },
+  {
+    slug: "cassazione-societa-comodo-rimborso-iva",
+    title: "Società di comodo: la Cassazione apre al rimborso IVA",
+    date: "2026-08-29",
+    excerpt:
+      "Con la sentenza n. 4151/2025 la Cassazione chiarisce che il mancato superamento del test di operatività non basta da solo a negare il rimborso IVA.",
+    tags: ["Giurisprudenza Fiscale", "IVA"],
+    body: [
+      "La Corte di Cassazione, sezione tributaria, con la sentenza n. 4151 del 18 febbraio 2025, è tornata sul tema delle società di comodo, recependo i principi espressi dalla Corte di Giustizia UE nella causa C-341/22 (Feudi di San Gregorio, 7 marzo 2024).",
+      "Il principio è netto: il diritto alla detrazione e al rimborso dell'IVA non può essere negato in modo automatico solo perché la società non supera il test di operatività previsto dall'art. 30 della L. 724/1994. La presunzione di non operatività, pur ammessa dal diritto interno, non può tradursi in una negazione dello status di soggetto passivo IVA basata su un mero criterio quantitativo di ricavi.",
+      "Per le tante piccole imprese italiane classificate 'di comodo' per ricavi sotto soglia — magari per un anno difficile, per investimenti in corso o per cause di forza maggiore — è un argomento difensivo importante contro i dinieghi di rimborso o riporto del credito IVA motivati solo sul mancato superamento del test.",
+      "Chi ha ricevuto un diniego di questo tipo può valutare, con l'assistenza del proprio commercialista, se impugnarlo alla luce di questo orientamento.",
+    ],
+    source: { label: "Corte di Cassazione", url: "https://www.cortedicassazione.it" },
+  },
+  {
+    slug: "cassazione-prescrizione-cartella-giudice-tributario",
+    title: "Prescrizione dopo la cartella: decide il giudice tributario",
+    date: "2026-08-29",
+    excerpt:
+      "Le Sezioni Unite chiariscono: se si eccepisce la prescrizione del debito tributario, anche dopo la cartella, competente è la Corte di Giustizia Tributaria.",
+    tags: ["Giurisprudenza Fiscale", "Sovraindebitamento e Cartelle"],
+    body: [
+      "Le Sezioni Unite civili della Cassazione, con l'ordinanza n. 2098 del gennaio 2025, hanno risolto un dubbio molto pratico: quale giudice è competente quando il contribuente eccepisce che il credito tributario si è prescritto, o che la notifica della cartella è nulla, dopo che la cartella stessa è già stata notificata?",
+      "La risposta è la Corte di Giustizia Tributaria (l'ex Commissione Tributaria), e non il giudice ordinario dell'esecuzione. Il criterio guida è quello del 'petitum sostanziale': conta la natura tributaria del credito contestato, non la fase — cognizione o esecuzione — in cui la prescrizione viene sollevata.",
+      "È un punto decisivo per chi riceve un pignoramento o un'intimazione di pagamento a distanza di anni da una cartella mai pagata: rivolgersi al giudice sbagliato porta all'inammissibilità del ricorso per errore di giurisdizione, un rischio concreto per chi si difende da solo o con assistenza non specializzata.",
+      "In questi casi conviene farsi assistere prima di presentare qualsiasi opposizione, per individuare subito la sede corretta ed evitare di far scadere i termini.",
+    ],
+    source: { label: "Corte di Cassazione", url: "https://www.cortedicassazione.it" },
+  },
+  {
+    slug: "cassazione-prescrizione-sanzioni-interessi-cartella",
+    title: "Cartelle: sanzioni e interessi si prescrivono in 5 anni",
+    date: "2026-08-30",
+    excerpt:
+      "La Cassazione conferma: senza una sentenza definitiva alle spalle, sanzioni e interessi da cartella si prescrivono in 5 anni, non in 10.",
+    tags: ["Giurisprudenza Fiscale", "Sovraindebitamento e Cartelle"],
+    body: [
+      "Con l'ordinanza n. 7408 del 20 marzo 2025, la Cassazione ha ribadito un orientamento ormai consolidato (in linea con le ordinanze n. 2095/2023 e n. 24721/2024): quando una cartella esattoriale riguarda sanzioni e interessi, e non è fondata su una sentenza passata in giudicato, il termine di prescrizione è quinquennale — 5 anni, ai sensi dell'art. 20, comma 3 del D.Lgs. 472/1997 per le sanzioni e dell'art. 2948, n. 4 del Codice civile per gli interessi — e non decennale.",
+      "Un punto importante viene chiarito: la mancata impugnazione della cartella nei 60 giorni la rende definitiva, ma non trasforma automaticamente il termine di prescrizione breve in quello ordinario di 10 anni. Quella conversione scatta solo in presenza di un titolo giudiziale definitivo, cioè una sentenza.",
+      "È una notizia rilevante per chi ha vecchie cartelle mai impugnate: anche se ormai definitive, la parte relativa a sanzioni e interessi resta soggetta alla prescrizione breve, e se l'Agente della riscossione non ha compiuto validi atti interruttivi in quel periodo, può essere eccepita come prescritta.",
+      "Verificare data di notifica ed eventuali atti interruttivi prima di pagare, o prima di subire un pignoramento, può fare una differenza concreta sull'importo effettivamente dovuto.",
+    ],
+    source: { label: "Corte di Cassazione", url: "https://www.cortedicassazione.it" },
   },
   {
     slug: "bilanci-2023-approvazione-entro-29-aprile",
