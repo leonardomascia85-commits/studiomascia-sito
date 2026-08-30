@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getSortedNews } from "@/lib/content/news";
+import { getSortedNews, TAGS, tagToSlug } from "@/lib/content/news";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,5 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(n.date),
   }));
 
-  return [...staticRoutes, ...newsRoutes];
+  const tagRoutes = TAGS.map((tag) => ({
+    url: `${SITE_URL}/news/tag/${tagToSlug(tag)}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticRoutes, ...newsRoutes, ...tagRoutes];
 }

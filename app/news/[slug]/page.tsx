@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
-import { getNewsBySlug, getSortedNews } from "@/lib/content/news";
+import { getNewsBySlug, getSortedNews, tagToSlug } from "@/lib/content/news";
 import { buildMetadata } from "@/lib/seo";
 import { STUDIO_INFO } from "@/lib/content/studio-info";
 
@@ -65,6 +65,19 @@ export default async function NewsArticlePage({
         <h1 className="font-serif text-3xl md:text-[44px] font-light text-white leading-tight max-w-3xl">
           {item.title}
         </h1>
+        {item.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-6">
+            {item.tags.map((tag) => (
+              <Link
+                key={tag}
+                href={`/news/tag/${tagToSlug(tag)}`}
+                className="text-[11px] tracking-[0.08em] uppercase text-white/60 border border-white/20 px-3 py-1 hover:border-gold hover:text-gold transition-colors"
+              >
+                {tag}
+              </Link>
+            ))}
+          </div>
+        )}
       </section>
 
       <article className="px-6 py-16 md:px-[60px] md:py-20 max-w-3xl">

@@ -3,11 +3,38 @@ export interface NewsItem {
   title: string;
   date: string; // ISO yyyy-mm-dd
   excerpt: string;
+  tags: string[];
   // Paragrafi del corpo articolo. Per contenuti originali dello Studio: testo
   // completo. Per estratti da fonti esterne: 2-4 frasi di sintesi, mai il
   // testo integrale dell'articolo originale (vedi `source`).
   body: string[];
   source?: { label: string; url: string };
+}
+
+export const TAGS = [
+  "Bandi e Finanziamenti PMI",
+  "Scadenze Fiscali",
+  "Contenzioso Tributario",
+  "Sovraindebitamento e Cartelle",
+  "IVA",
+  "Accertamenti e Controlli",
+  "Resto al Sud",
+  "Lavoro e Assunzioni",
+  "Startup e Innovazione",
+  "Bilanci",
+] as const;
+
+export function tagToSlug(tag: string): string {
+  return tag
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+export function slugToTag(slug: string): string | undefined {
+  return TAGS.find((t) => tagToSlug(t) === slug);
 }
 
 export const NEWS: NewsItem[] = [
@@ -17,6 +44,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-02",
     excerpt:
       "Il D.Lgs. 138/2026 riorganizza gli strumenti agevolativi gestiti dal MIMIT: non nuovi bonus, ma un riordino per ridurre sovrapposizioni.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "Il D.Lgs. 138/2026, pubblicato in Gazzetta Ufficiale il 3 agosto 2026 ed entrato in vigore il 18 agosto, riorganizza gli strumenti agevolativi nazionali gestiti dal Ministero delle Imprese e del Made in Italy.",
       "Non introduce nuovi incentivi, ma concentra le misure esistenti attorno al Fondo per la Crescita Sostenibile, articolato su quattro direttrici: ricerca, sviluppo e innovazione; nascita e crescita di nuove imprese; investimenti produttivi per la transizione verde e digitale; accesso al credito e ai mercati dei capitali.",
@@ -33,6 +61,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-03",
     excerpt:
       "Non tutte le cartelle sono dovute per intero: vizi di notifica, termini scaduti e prescrizione possono renderle annullabili, in tutto o in parte.",
+    tags: ["Sovraindebitamento e Cartelle", "Contenzioso Tributario"],
     body: [
       "Prima di pagare una cartella esattoriale conviene verificarla: vizi di notifica, la mancata indicazione del responsabile del procedimento, errori di calcolo o termini di decadenza scaduti sono tra i motivi più comuni che ne permettono l'annullamento, totale o parziale.",
       "Il ricorso va presentato entro 60 giorni dalla notifica, davanti alla Corte di Giustizia Tributaria di primo grado competente.",
@@ -46,6 +75,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-04",
     excerpt:
       "Il bando per chi vuole avviare un'attività nel Mezzogiorno tra i 18 e i 35 anni: voucher, contributo a fondo perduto e come richiederlo.",
+    tags: ["Resto al Sud", "Bandi e Finanziamenti PMI"],
     body: [
       "Resto al Sud 2.0 sostiene chi ha tra i 18 e i 35 anni (non ancora compiuti), in condizione di inattività, inoccupazione o disoccupazione, e vuole avviare un'attività in una delle regioni ammesse: Abruzzo, Basilicata, Calabria, Campania, Molise, Puglia, Sardegna e Sicilia.",
       "Il sostegno può arrivare fino a 50.000 € come voucher (100% a fondo perduto) o fino a 200.000 € come contributo investimento, in parte a fondo perduto e in parte tramite finanziamento bancario agevolato.",
@@ -58,6 +88,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-05",
     excerpt:
       "Contributo a fondo perduto fino a 20.000 € per l'acquisto di servizi cloud e cybersicurezza: domande dal 10 novembre 2026.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "Il Voucher Cloud e Cybersecurity mette a disposizione di PMI e lavoratori autonomi un contributo a fondo perduto pari al 50% della spesa, tra un minimo di 4.000 € e un massimo di 20.000 € per impresa, per l'acquisto di servizi cloud e cybersicurezza presso fornitori abilitati con decreto.",
       "La dotazione complessiva è di 150 milioni di euro, di cui 71 milioni riservati alle imprese di Abruzzo, Basilicata, Calabria, Campania, Molise, Puglia, Sardegna e Sicilia.",
@@ -71,6 +102,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-06",
     excerpt:
       "Finanziamento agevolato e contributo a fondo perduto per progetti di ricerca industriale nelle regioni del Mezzogiorno: sportello dal 7 ottobre.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "Scoperta Imprenditoriale II mette a disposizione oltre 505 milioni di euro per progetti di ricerca industriale e sviluppo sperimentale coerenti con la Strategia Nazionale di Specializzazione Intelligente, promossi da imprese con sede o unità operativa in Basilicata, Calabria, Campania, Molise, Puglia, Sardegna e Sicilia.",
       "Il sostegno combina un finanziamento agevolato allo 0,80% (fino a 8 anni) con un contributo a fondo perduto che arriva fino al 40% per le piccole imprese e al 35% per le medie.",
@@ -84,6 +116,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-07",
     excerpt:
       "Contributo a fondo perduto per la formazione del personale su innovazione tecnologica e transizione verde e digitale nelle PMI del Mezzogiorno.",
+    tags: ["Bandi e Finanziamenti PMI", "Lavoro e Assunzioni"],
     body: [
       "La misura Sviluppo Competenze Specialistiche delle PMI finanzia servizi di formazione del personale su innovazione tecnologica e transizione verde e digitale, per micro, piccole e medie imprese con unità operativa in Basilicata, Calabria, Campania, Molise, Puglia, Sardegna e Sicilia.",
       "Il 40% delle risorse è riservato ai settori automotive, moda, tessile e mobile. La misura è gestita da Invitalia per conto del MIMIT nell'ambito del programma nazionale dedicato alla transizione verde e digitale.",
@@ -97,6 +130,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-08",
     excerpt:
       "447 milioni di euro per le PMI del Mezzogiorno che investono in progetti green e digitali: domande dal 6 ottobre 2026.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "Investimenti Sostenibili 4.0 mette a disposizione delle micro, piccole e medie imprese di Basilicata, Calabria, Campania, Molise, Puglia, Sardegna e Sicilia una copertura fino al 75% della spesa ammissibile per progetti di investimento green e digitale, ripartita tra il 35% a fondo perduto e il 40% come finanziamento agevolato a tasso zero.",
       "La dotazione complessiva è di circa 447,6 milioni di euro. Nella precedente edizione lo sportello si è esaurito in un solo giorno: conviene quindi preparare la documentazione con largo anticipo.",
@@ -110,6 +144,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-09",
     excerpt:
       "Contributo a fondo perduto fino al 70% per le PMI che investono in intelligenza artificiale, cloud, cybersicurezza e sostenibilità.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "Il Voucher Doppia Transizione mette a disposizione di micro, piccole e medie imprese iscritte al Registro Imprese 150 milioni di euro per investimenti in digitale — intelligenza artificiale, cloud, cybersicurezza — e sostenibilità, oltre a servizi di consulenza e formazione.",
       "Il contributo a fondo perduto arriva fino al 70% della spesa. La gestione è affidata alle Camere di Commercio territoriali tramite la piattaforma ReStart di InfoCamere.",
@@ -123,6 +158,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-10",
     excerpt:
       "Le imprese agricole, della pesca e dell'acquacoltura possono usare in compensazione un credito d'imposta sui beni strumentali 4.0.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "Le imprese agricole, della pesca e dell'acquacoltura che investono in nuovi beni strumentali 4.0, materiali e immateriali, possono beneficiare di un credito d'imposta pari al 40% del costo, fino a un massimo di 1 milione di euro per impresa.",
       "Sono agevolabili gli investimenti effettuati dal 1° gennaio 2026 al 28 settembre 2028, con possibile proroga al 30 giugno 2027 per chi entro fine 2026 ha un ordine accettato dal fornitore con acconto di almeno il 20%.",
@@ -136,6 +172,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-11",
     excerpt:
       "Chi assume a tempo indeterminato può dedurre il 20% in più del costo del personale, il 30% per le categorie protette.",
+    tags: ["Lavoro e Assunzioni", "Scadenze Fiscali"],
     body: [
       "Le imprese e i lavoratori autonomi che incrementano il numero di dipendenti a tempo indeterminato possono beneficiare di una maggiorazione deducibile del 20% del costo del nuovo personale assunto, che sale al 30% per le categorie protette.",
       "La misura si applica ai periodi d'imposta 2025, 2026 e 2027, a condizione che il numero di dipendenti a fine anno superi la media dell'anno precedente.",
@@ -148,6 +185,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-12",
     excerpt:
       "Tre esoneri contributivi distinti per chi assume a tempo indeterminato entro il 31 dicembre 2026, fino al 100% dei contributi.",
+    tags: ["Lavoro e Assunzioni", "Bandi e Finanziamenti PMI"],
     body: [
       "Sono attivi per tutto il 2026 tre esoneri contributivi per i datori di lavoro privati che assumono a tempo indeterminato, o trasformano un contratto a termine, entro il 31 dicembre 2026, a condizione di un incremento occupazionale.",
       "Il Bonus Giovani riguarda i lavoratori under 35; il Bonus Donne le donne svantaggiate o molto svantaggiate; il Bonus ZES i datori con massimo 10 dipendenti nelle regioni della Zona Economica Speciale che assumono over 35 disoccupati da almeno 24 mesi.",
@@ -161,6 +199,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-13",
     excerpt:
       "Le imprese del Mezzogiorno con dipendenti a tempo indeterminato hanno diritto a uno sconto sui contributi previdenziali fino al 20%.",
+    tags: ["Lavoro e Assunzioni", "Bandi e Finanziamenti PMI"],
     body: [
       "Le micro, piccole e medie imprese private con dipendenti a tempo indeterminato in Abruzzo, Basilicata, Calabria, Campania, Molise, Puglia, Sardegna e Sicilia possono beneficiare di un esonero contributivo pari al 20% dei contributi previdenziali a carico del datore, con un tetto massimo di 125 € mensili per lavoratore.",
       "La percentuale è stata ridotta rispetto al 25% del 2025, ma la misura resta in vigore, prorogata fino al 2029 con percentuali progressivamente decrescenti.",
@@ -174,6 +213,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-14",
     excerpt:
       "Fino al 90% delle spese ammissibili a tasso zero, senza graduatorie né scadenze: la principale agevolazione nazionale per le startup.",
+    tags: ["Startup e Innovazione", "Bandi e Finanziamenti PMI"],
     body: [
       "Smart&Start Italia è la principale misura nazionale per le startup innovative iscritte al registro speciale, con piani di impresa da 100.000 a 1,5 milioni di euro di spese ammissibili.",
       "Offre un finanziamento a tasso zero fino al 90% delle spese ammissibili, con una quota a fondo perduto del 30% per le startup con sede nel Mezzogiorno. I tempi istruttori indicativi sono di 60 giorni.",
@@ -187,6 +227,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-15",
     excerpt:
       "Un contributo a fondo perduto per le spese di consulenza brevettuale rivolto a startup innovative e microimprese.",
+    tags: ["Startup e Innovazione", "Bandi e Finanziamenti PMI"],
     body: [
       "Il Voucher 3I, gestito da Invitalia per conto del MIMIT, sostiene startup innovative iscritte al registro speciale e microimprese italiane nelle spese di consulenza per la tutela della proprietà intellettuale.",
       "Il contributo a fondo perduto copre le ricerche di anteriorità e il deposito della domanda di brevetto nazionale, fino a 3.000 € più IVA, e l'estensione internazionale del brevetto, fino a 4.000 € più IVA.",
@@ -200,6 +241,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-16",
     excerpt:
       "Coperture fino all'80% per chi investe, 50% per la liquidità: lo strumento che facilita l'accesso al credito bancario per le PMI.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "Il Fondo di Garanzia per le PMI facilita l'accesso al credito bancario garantendo una quota del finanziamento richiesto: fino all'80% per gli investimenti, 50% per la liquidità, e fino all'80% per la Nuova Sabatini, il microcredito e le startup innovative.",
       "Il funzionamento è stato prorogato per tutto il 2026, con un plafond di impegni fissato a 140 miliardi di euro dalla Legge di Bilancio.",
@@ -213,6 +255,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-17",
     excerpt:
       "Contributo per l'acquisto di macchinari, impianti e beni strumentali: attiva a sportello, senza scadenza fissa.",
+    tags: ["Bandi e Finanziamenti PMI"],
     body: [
       "La Nuova Sabatini sostiene le PMI che acquistano beni strumentali — macchinari, impianti, attrezzature, anche in chiave 4.0 e green — con un contributo che abbatte gli interessi sul finanziamento richiesto.",
       "La misura è stata rifinanziata dalla Manovra 2026 con 200 milioni di euro per quest'anno e 450 milioni per il 2027, a conferma della sua centralità tra gli strumenti nazionali gestiti dal MIMIT.",
@@ -226,6 +269,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-18",
     excerpt:
       "Una recente pronuncia della Cassazione chiarisce che un Modello 231 con solo principi generali non è sufficiente a dimostrare l'effettivo controllo dei rischi aziendali.",
+    tags: ["Accertamenti e Controlli"],
     body: [
       "Una recente pronuncia della Corte di Cassazione ha negato a un'impresa l'accesso al controllo giudiziario previsto dal Codice Antimafia, ritenendo il suo Modello 231 (il modello organizzativo previsto dal D.Lgs. 231/2001) troppo generico.",
       "Il modello riportava solo principi astratti e indicazioni generali degli strumenti di controllo, senza protocolli concreti calibrati sui rischi specifici dell'azienda, senza criteri verificabili per la scelta delle controparti commerciali e senza prova dell'effettiva operatività dell'organismo di vigilanza.",
@@ -238,6 +282,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-19",
     excerpt:
       "Una norma del 2026 riconosce piena validità alla documentazione bancaria in alternativa alle ricevute POS cartacee, se riporta il dettaglio delle operazioni.",
+    tags: ["Accertamenti e Controlli"],
     body: [
       "L'art. 8 del Decreto-Legge 19/2026, convertito con modificazioni dalla Legge 50/2026, riconosce piena equivalenza tra la ricevuta POS cartacea e la documentazione bancaria — estratto conto, anche digitale, o altra comunicazione dell'istituto di credito.",
       "La condizione è che il documento riporti il dettaglio delle singole operazioni (data, importo, beneficiario) e venga conservato per almeno 10 anni, come previsto per le scritture contabili dal Codice civile.",
@@ -250,6 +295,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-20",
     excerpt:
       "La Cassazione chiarisce chi deve dimostrare a quale attività appartiene un movimento bancario contestato dal Fisco.",
+    tags: ["Accertamenti e Controlli", "IVA"],
     body: [
       "Con l'ordinanza n. 21095/2026, la Corte di Cassazione ha affrontato il caso di un professionista che esercitava anche un'attività d'impresa agricola con un'unica partita IVA.",
       "La Corte ha stabilito che, in questi casi, spetta al contribuente indicare in modo analitico e dettagliato a quale delle due attività sia riconducibile ciascuna movimentazione bancaria contestata, fornendo una prova puntuale e non generica.",
@@ -262,6 +308,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-21",
     excerpt:
       "La Corte di Giustizia Tributaria di Roma chiarisce che conta la sostanza dell'informazione fornita al contribuente, non l'etichetta formale del documento.",
+    tags: ["Accertamenti e Controlli"],
     body: [
       "Con la sentenza n. 8483/2026, la Corte di Giustizia Tributaria di Roma ha stabilito che l'invito al contraddittorio preventivo può assolvere la funzione dello \"schema di atto\" previsto dallo Statuto del contribuente anche senza recare formalmente questa dicitura.",
       "Ciò che conta, secondo i giudici, è che il documento consenta al contribuente di conoscere gli elementi della contestazione e di esercitare compiutamente il diritto di difesa entro i 60 giorni previsti.",
@@ -274,6 +321,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-22",
     excerpt:
       "Quattro risposte recenti dell'Agenzia delle Entrate su temi che toccano da vicino imprese, professionisti e proprietari immobiliari.",
+    tags: ["Accertamenti e Controlli", "IVA"],
     body: [
       "Superbonus e vendita di immobili in comproprietà (risposta n. 158/2026): se un immobile è stato acquisito in parte per successione e in parte per acquisto, l'esclusione da plusvalenza vale solo per la quota ereditata. Le spese Superbonus sostenute da un solo comproprietario non aumentano il costo fiscale degli altri venditori che non le hanno sostenute.",
       "Certificazione Unica e collaboratori forfettari (risposta n. 127/2026): l'esonero dalla CU per i compensi a professionisti in regime forfettario vale solo se il compenso è documentato da fattura elettronica. Se il professionista è esonerato dall'e-fattura, la CU resta obbligatoria.",
@@ -288,6 +336,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-23",
     excerpt:
       "L'Italia ha avviato il recepimento della riforma europea \"IVA nell'era digitale\" (ViDA): ecco la tempistica e cosa aspettarsi nei prossimi anni.",
+    tags: ["IVA"],
     body: [
       "Con la Legge 36/2026, pubblicata il 17 marzo scorso, l'Italia ha avviato il recepimento del pacchetto europeo ViDA (VAT in the Digital Age). Per ora si tratta di una delega al Governo: le misure attuative sono attese dal 1° gennaio 2027.",
       "A livello europeo, la riforma prevede tappe fino al 2030: dal 1° luglio di quell'anno, le fatture per operazioni intra-UE tra imprese (B2B) dovranno essere digitali e trasmesse entro 10 giorni dall'operazione, in sostituzione dell'attuale reverse charge cartaceo.",
@@ -301,6 +350,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-24",
     excerpt:
       "Un nuovo decreto codifica in un unico testo le regole su accertamento delle imposte sui redditi e anagrafe tributaria, dal 1° gennaio 2027.",
+    tags: ["Accertamenti e Controlli"],
     body: [
       "Il D.Lgs. 5 agosto 2026, n. 141, in vigore dal 1° gennaio 2027, codifica in un unico Testo Unico — 368 articoli in tre parti — le norme su adempimenti e accertamento, abrogando gran parte del DPR 600/1973 (accertamento delle imposte sui redditi), del DPR 605/1973 (anagrafe tributaria) e del D.Lgs. 218/1997 (accertamento con adesione).",
       "È un provvedimento distinto dal Testo Unico IVA, e rappresenta l'ultimo tassello del progetto di codificazione fiscale avviato con la riforma tributaria degli ultimi anni.",
@@ -314,6 +364,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-25",
     excerpt:
       "Dal 1° gennaio 2027 il DPR 633/1972 sarà sostituito da un nuovo Testo Unico IVA: cosa cambia (e cosa no) per imprese e professionisti.",
+    tags: ["IVA"],
     body: [
       "Il D.Lgs. 19 gennaio 2026, n. 10 ha approvato il nuovo Testo Unico IVA, che dal 1° gennaio 2027 abrogherà e sostituirà lo storico DPR 633/1972.",
       "Si tratta di un intervento compilativo: le regole sostanziali dell'IVA — esenzioni, aliquote, adempimenti — restano invariate. Cambia però la numerazione degli articoli, con cui converrà familiarizzare per non confondersi nei riferimenti normativi.",
@@ -326,6 +377,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-26",
     excerpt:
       "Acconti d'imposta, IMU e liquidazioni IVA: il calendario delle scadenze principali tra novembre e dicembre 2026.",
+    tags: ["Scadenze Fiscali"],
     body: [
       "Il 30 novembre è una data chiave di fine anno: seconda rata, o rata unica, di acconto IRPEF, IRES e IRAP, oltre alla liquidazione periodica IVA del terzo trimestre e all'imposta di bollo sulle fatture elettroniche dello stesso periodo. La stessa data è anche il termine per la terza rata della Rottamazione-quinquies, per chi ha aderito e opta per il pagamento rateale.",
       "Chiude l'anno il 16 dicembre, con il saldo IMU (seconda rata, comprensivo di eventuale conguaglio sulle aliquote comunali), l'IVA mensile di novembre e il versamento delle ritenute.",
@@ -339,6 +391,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-27",
     excerpt:
       "Il 30 settembre concentra diversi adempimenti importanti, mentre il Concordato Preventivo Biennale e il Modello Redditi slittano al 2 novembre.",
+    tags: ["Scadenze Fiscali"],
     body: [
       "Il 30 settembre 2026 è una data da segnare: scade il termine per l'invio telematico del Modello 730/2026, la seconda rata della Rottamazione-quinquies per chi ha aderito, oltre alla liquidazione periodica IVA e all'imposta di bollo sulle fatture elettroniche del trimestre.",
       "Il Concordato Preventivo Biennale e il Modello Redditi Persone Fisiche e Società di Persone slittano invece al 2 novembre 2026, poiché il termine ordinario del 31 ottobre cade di sabato.",
@@ -352,6 +405,7 @@ export const NEWS: NewsItem[] = [
     date: "2026-08-28",
     excerpt:
       "Le domande si sono chiuse il 30 aprile 2026: ecco il calendario delle rate per chi ha aderito e le alternative per chi non l'ha fatto in tempo.",
+    tags: ["Sovraindebitamento e Cartelle", "Scadenze Fiscali"],
     body: [
       "La Legge di Bilancio 2026 ha introdotto la Rottamazione-quinquies, la nuova definizione agevolata dei carichi affidati all'Agenzia delle Entrate-Riscossione tra il 2000 e il 2023, con azzeramento di sanzioni e interessi.",
       "Le domande di adesione si sono chiuse il 30 aprile 2026. Per chi ha aderito, il calendario delle rate prevede la prima entro il 31 luglio, la seconda entro il 30 settembre e la terza entro il 30 novembre 2026, con un interesse del 3% annuo su tutte le rate successive alla prima.",
@@ -368,6 +422,7 @@ export const NEWS: NewsItem[] = [
     date: "2024-03-11",
     excerpt:
       "Il Codice civile prevede termini precisi per l'approvazione e il deposito del bilancio d'esercizio: ecco le scadenze e l'iter da rispettare.",
+    tags: ["Bilanci", "Scadenze Fiscali"],
     body: [
       "Il Codice civile (art. 2364, comma 2 c.c.) prevede che le società di capitali devono procedere con l'approvazione del bilancio entro 120 giorni dalla chiusura dell'esercizio, oppure entro 180 giorni in caso di particolari esigenze.",
       "Il bilancio dell'esercizio chiuso al 31 dicembre 2023 andrà quindi approvato nell'ordinario termine del 29 aprile, essendo questo un anno bisestile.",
@@ -385,4 +440,8 @@ export function getNewsBySlug(slug: string): NewsItem | undefined {
 
 export function getSortedNews(): NewsItem[] {
   return [...NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function getNewsByTag(tag: string): NewsItem[] {
+  return getSortedNews().filter((n) => n.tags.includes(tag));
 }
