@@ -8,4 +8,5 @@ export const STUDIO_INFO = {
   pec: "leonardomascia@pec.it",
   hours: "Lunedì – Venerdì · 9:00–13:00 · 15:00–18:00",
   foundedYear: 2012,
+  linkedinUrl: "",
 };
