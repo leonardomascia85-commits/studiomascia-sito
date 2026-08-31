@@ -1,4 +1,4 @@
-import { ExternalLink, LogIn, MessageCircle, Percent } from "lucide-react";
+import { ClipboardCheck, ExternalLink, LogIn, MessageCircle, Percent } from "lucide-react";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { CtaBanner } from "@/components/ui/cta-banner";
 import { buildMetadata } from "@/lib/seo";
@@ -65,19 +65,25 @@ export default function RestoAlSudPage() {
             <h2 className="font-serif text-2xl font-medium text-ink mb-2">
               Vuoi presentare un progetto Resto al Sud?
             </h2>
+            <p className="text-[15px] text-ink/70 leading-relaxed">
+              Rispondi a poche domande veloci: verifichiamo subito se sei nei
+              requisiti.
+            </p>
+          </div>
+          <div className="flex flex-col items-center lg:items-end gap-2 shrink-0">
             <a
               href="/resto-al-sud/questionario"
-              className="text-[13px] text-gold underline underline-offset-2 hover:text-ink"
+              className="flex items-center gap-2 bg-gold text-ink text-[13px] font-medium tracking-[0.1em] uppercase px-8 py-4 whitespace-nowrap hover:bg-[#d4b06a]"
             >
-              Rispondi a poche domande veloci e ti richiamiamo noi →
+              <ClipboardCheck size={15} /> Compila il questionario
+            </a>
+            <a
+              href="/contatti"
+              className="flex items-center gap-2 text-[13px] text-ink/60 underline underline-offset-2 hover:text-ink"
+            >
+              <MessageCircle size={14} /> oppure contattaci direttamente
             </a>
           </div>
-          <a
-            href="/contatti"
-            className="flex items-center gap-2 bg-ink text-white text-[13px] font-medium tracking-[0.1em] uppercase px-8 py-4 whitespace-nowrap hover:bg-ink/90 shrink-0"
-          >
-            <MessageCircle size={15} /> Contattaci
-          </a>
         </div>
       </section>
 
@@ -243,8 +249,8 @@ export default function RestoAlSudPage() {
             Ti seguiamo dalla domanda alla rendicontazione.
           </>
         }
-        buttonLabel="Contattaci"
-        buttonHref="/contatti"
+        buttonLabel="Compila il questionario"
+        buttonHref="/resto-al-sud/questionario"
       />
     </>
   );
