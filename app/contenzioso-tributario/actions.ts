@@ -63,6 +63,17 @@ export async function sendValutazione(
         error: `Impossibile inviare la richiesta. Scrivici direttamente a ${STUDIO_INFO.email}.`,
       };
     }
+
+    resend.emails
+      .send({
+        from: `Studio Mascia <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
+        to: email,
+        subject: "Abbiamo ricevuto la tua richiesta — Studio Mascia",
+        text: `Ciao ${nome},\n\nabbiamo ricevuto la tua richiesta di prima valutazione gratuita${
+          files.length > 0 ? " con i documenti allegati" : ""
+        }: ti risponderemo entro 48 ore.\n\nA presto,\nStudio Mascia\n${STUDIO_INFO.address} · ${STUDIO_INFO.city}\n${STUDIO_INFO.email}`,
+      })
+      .catch(() => {});
   } catch {
     return {
       error: `Impossibile inviare la richiesta. Scrivici direttamente a ${STUDIO_INFO.email}.`,

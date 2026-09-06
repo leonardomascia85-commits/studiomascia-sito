@@ -34,6 +34,15 @@ export async function sendContactMessage(
         error: `Impossibile inviare il messaggio. Scrivici direttamente a ${STUDIO_INFO.email}.`,
       };
     }
+
+    resend.emails
+      .send({
+        from: `Studio Mascia <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
+        to: email,
+        subject: "Abbiamo ricevuto il tuo messaggio — Studio Mascia",
+        text: `Ciao ${name},\n\nabbiamo ricevuto il tuo messaggio e ti risponderemo entro 24 ore.\n\nIl tuo messaggio:\n${message}\n\nA presto,\nStudio Mascia\n${STUDIO_INFO.address} · ${STUDIO_INFO.city}\n${STUDIO_INFO.email}`,
+      })
+      .catch(() => {});
   } catch {
     return {
       error: `Impossibile inviare il messaggio. Scrivici direttamente a ${STUDIO_INFO.email}.`,

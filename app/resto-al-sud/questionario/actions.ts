@@ -92,6 +92,15 @@ export async function sendQuestionario(
         error: `Impossibile inviare il questionario. Scrivici direttamente a ${STUDIO_INFO.email}.`,
       };
     }
+
+    resend.emails
+      .send({
+        from: `Studio Mascia <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
+        to: values.email,
+        subject: "Abbiamo ricevuto le tue risposte — Studio Mascia",
+        text: `Ciao ${values.name},\n\nabbiamo ricevuto le tue risposte al questionario Resto al Sud: ti contatteremo al più presto per valutare insieme la tua idea.\n\nA presto,\nStudio Mascia\n${STUDIO_INFO.address} · ${STUDIO_INFO.city}\n${STUDIO_INFO.email}`,
+      })
+      .catch(() => {});
   } catch {
     return {
       error: `Impossibile inviare il questionario. Scrivici direttamente a ${STUDIO_INFO.email}.`,
