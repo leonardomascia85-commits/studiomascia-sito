@@ -45,8 +45,8 @@ export default function PrivacyPage() {
           <p>
             Il Titolare del trattamento dei dati è {STUDIO_INFO.founder},
             titolare dello {STUDIO_INFO.name}, con sede in{" "}
-            {STUDIO_INFO.address}, {STUDIO_INFO.cap} {STUDIO_INFO.city} — P.IVA
-            [da inserire].
+            {STUDIO_INFO.address}, {STUDIO_INFO.cap} {STUDIO_INFO.city} — P.IVA{" "}
+            {STUDIO_INFO.piva}.
           </p>
           <p>
             Per qualsiasi richiesta relativa al trattamento dei tuoi dati
