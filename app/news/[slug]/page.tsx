@@ -62,11 +62,8 @@ export default async function NewsArticlePage({
             year: "numeric",
           })}
         </Eyebrow>
-        <h1 className="font-serif text-3xl md:text-[44px] font-light text-white leading-tight max-w-3xl">
-          {item.title}
-        </h1>
         {item.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-6">
+          <div className="flex flex-wrap gap-2 mt-4 mb-6">
             {item.tags.map((tag) => (
               <Link
                 key={tag}
@@ -78,6 +75,9 @@ export default async function NewsArticlePage({
             ))}
           </div>
         )}
+        <h1 className="font-serif text-3xl md:text-[44px] font-light text-white leading-tight max-w-3xl">
+          {item.title}
+        </h1>
       </section>
 
       <article className="px-6 py-16 md:px-[60px] md:py-20 max-w-3xl">
