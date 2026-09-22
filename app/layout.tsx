@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CookieConsent } from "@/components/analytics/cookie-consent";
 import { MetaPixel } from "@/components/analytics/meta-pixel";
+import { GoogleTag } from "@/components/analytics/google-tag";
 import { STUDIO_INFO } from "@/lib/content/studio-info";
 import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <MetaPixel />
+        <GoogleTag />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
