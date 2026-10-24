@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resto-al-sud",
     "/resto-al-sud/questionario",
     "/contenzioso-tributario",
+    "/revisione-legale",
     "/news",
     "/contatti",
     "/privacy",

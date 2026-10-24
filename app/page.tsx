@@ -69,22 +69,34 @@ export default function HomePage() {
           di consulenza
         </h2>
         <div className="grid md:grid-cols-3 gap-px bg-line">
-          {SERVICES.map((s) => (
-            <div
-              key={s.slug}
-              className="group bg-white hover:bg-ink transition-colors px-9 py-10"
-            >
-              <div className="font-serif text-sm text-gold/60 group-hover:text-gold/40 mb-5">
-                {s.number}
+          {SERVICES.map((s) => {
+            const cardContent = (
+              <>
+                <div className="font-serif text-sm text-gold/60 group-hover:text-gold/40 mb-5">
+                  {s.number}
+                </div>
+                <h3 className="font-serif text-xl font-medium text-ink group-hover:text-white transition-colors mb-3.5 leading-snug">
+                  {s.title}
+                </h3>
+                <p className="text-[14.5px] leading-relaxed text-[#7a7060] group-hover:text-white/55 transition-colors font-light">
+                  {s.homeSummary}
+                </p>
+              </>
+            );
+            return s.ctaHref ? (
+              <Link
+                key={s.slug}
+                href={s.ctaHref}
+                className="group bg-white hover:bg-ink transition-colors px-9 py-10"
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={s.slug} className="group bg-white hover:bg-ink transition-colors px-9 py-10">
+                {cardContent}
               </div>
-              <h3 className="font-serif text-xl font-medium text-ink group-hover:text-white transition-colors mb-3.5 leading-snug">
-                {s.title}
-              </h3>
-              <p className="text-[14.5px] leading-relaxed text-[#7a7060] group-hover:text-white/55 transition-colors font-light">
-                {s.homeSummary}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

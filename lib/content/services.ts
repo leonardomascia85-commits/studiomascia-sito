@@ -6,6 +6,8 @@ export interface Service {
   homeSummary: string;
   description: string;
   items: string[];
+  /** Pagina dedicata a cui collegare la card, se presente (altrimenti /contatti). */
+  ctaHref?: string;
 }
 
 export const SERVICES: Service[] = [
@@ -88,6 +90,7 @@ export const SERVICES: Service[] = [
     tag: "Collegio Sindacale · Revisori",
     homeSummary:
       "Collegio Sindacale, revisori legali e organi di gestione con piena indipendenza e professionalità.",
+    ctaHref: "/revisione-legale",
     description:
       "Attività di revisione legale dei conti e controllo contabile per società di capitali. Incarichi di Sindaco Revisore e componente del Collegio Sindacale, svolti con piena indipendenza e nel rispetto dei principi di revisione internazionali.",
     items: [

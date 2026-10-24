@@ -67,10 +67,10 @@ export default function ServiziPage() {
                 ))}
               </ul>
               <Link
-                href="/contatti"
+                href={s.ctaHref ?? "/contatti"}
                 className="inline-block text-[12px] tracking-[0.12em] uppercase text-ink font-medium border-b border-gold pb-0.5 hover:text-gold"
               >
-                Richiedi informazioni →
+                {s.ctaHref ? "Scopri di più →" : "Richiedi informazioni →"}
               </Link>
             </div>
           </div>

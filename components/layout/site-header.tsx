@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/servizi", label: "Servizi" },
   { href: "/resto-al-sud", label: "Resto al Sud" },
   { href: "/contenzioso-tributario", label: "Contenzioso Tributario" },
+  { href: "/revisione-legale", label: "Revisione Legale" },
   { href: "/news", label: "News" },
 ];
 
