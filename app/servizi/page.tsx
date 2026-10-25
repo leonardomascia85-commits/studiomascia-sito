@@ -41,13 +41,13 @@ export default function ServiziPage() {
             }`}
           >
             <div className="px-6 py-12 md:px-[60px] md:py-16 md:border-r border-line flex flex-col">
-              <div className="font-serif text-[48px] font-light text-line leading-none mb-5">
+              <div className="font-serif text-[48px] font-light text-muted leading-none mb-5">
                 {s.number}
               </div>
               <h2 className="font-serif text-[26px] font-medium text-ink leading-tight mb-4">
                 {s.title}
               </h2>
-              <p className="text-[11px] tracking-[0.15em] uppercase text-gold">
+              <p className="text-[11px] tracking-[0.15em] uppercase text-gold-deep">
                 {s.tag}
               </p>
             </div>

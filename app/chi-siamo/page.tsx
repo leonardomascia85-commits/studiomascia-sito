@@ -93,12 +93,12 @@ export default function ChiSiamoPage() {
       <section className="grid md:grid-cols-3 gap-px bg-line">
         {VALUES.map((v) => (
           <div key={v.title} className="bg-cream px-8 py-12 md:px-10 md:py-[52px]">
-            <div className="font-serif text-[48px] font-light text-gold leading-none mb-4">
+            <div className="font-serif text-[48px] font-light text-gold-deep leading-none mb-4">
               {v.num}
             </div>
-            <h3 className="font-serif text-[22px] font-medium text-ink mb-3">
+            <h2 className="font-serif text-[22px] font-medium text-ink mb-3">
               {v.title}
-            </h3>
+            </h2>
             <p className="text-[14.5px] text-muted leading-relaxed font-light">
               {v.text}
             </p>
@@ -114,7 +114,7 @@ export default function ChiSiamoPage() {
             <br />
             Mascia
           </h2>
-          <p className="text-[13px] tracking-[0.15em] uppercase text-white/40 mb-9">
+          <p className="text-[13px] tracking-[0.15em] uppercase text-white/55 mb-9">
             Dottore Commercialista · Revisore Legale
           </p>
           <p className="text-[15px] text-white/60 leading-relaxed font-light mb-9">
@@ -157,7 +157,7 @@ export default function ChiSiamoPage() {
                   i === 0 ? "border-t" : ""
                 }`}
               >
-                <span className="font-serif text-[15px] text-gold min-w-[44px]">
+                <span className="font-serif text-[15px] text-gold-deep min-w-[44px]">
                   {c.year}
                 </span>
                 <span className="text-[14.5px] text-[#3a3020] leading-snug font-light">
@@ -170,7 +170,7 @@ export default function ChiSiamoPage() {
       </section>
 
       <section className="bg-cream px-6 py-16 md:px-[60px] md:py-24">
-        <Eyebrow>Il nostro metodo</Eyebrow>
+        <Eyebrow tone="light">Il nostro metodo</Eyebrow>
         <h2 className="font-serif text-[30px] md:text-[36px] font-light text-ink leading-tight mb-10 md:mb-12 max-w-lg">
           Come lavoriamo
           <br />
@@ -179,13 +179,13 @@ export default function ChiSiamoPage() {
         <div className="grid md:grid-cols-2 gap-10">
           {APPROACH.map((a) => (
             <div key={a.title} className="flex gap-6 items-start">
-              <div className="w-12 h-12 min-w-[48px] border border-gold flex items-center justify-center font-serif text-xl text-gold">
+              <div className="w-12 h-12 min-w-[48px] border border-gold flex items-center justify-center font-serif text-xl text-gold-deep">
                 {a.num}
               </div>
               <div>
-                <h4 className="font-serif text-xl font-medium text-ink mb-2">
+                <h3 className="font-serif text-xl font-medium text-ink mb-2">
                   {a.title}
-                </h4>
+                </h3>
                 <p className="text-[14.5px] text-muted leading-relaxed font-light">
                   {a.text}
                 </p>

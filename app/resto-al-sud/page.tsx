@@ -48,7 +48,7 @@ export default function RestoAlSudPage() {
             <h2 className="font-serif text-2xl font-medium text-ink mb-2">
               Hai già una pratica con noi?
             </h2>
-            <p className="text-[15px] text-ink/70 leading-relaxed">
+            <p className="text-[15px] text-ink/80 leading-relaxed">
               Segui lo stato della domanda, carica i documenti e scrivi allo
               studio dalla tua area riservata.
             </p>
@@ -89,7 +89,7 @@ export default function RestoAlSudPage() {
 
       {/* TIPOLOGIE */}
       <section className="px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>In sintesi</Eyebrow>
+        <Eyebrow tone="light">In sintesi</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-12">
           Due modalità di sostegno
         </h2>
@@ -105,7 +105,7 @@ export default function RestoAlSudPage() {
               <h3 className="font-serif text-[26px] font-medium text-ink mb-4">
                 {p.title}
               </h3>
-              <div className="font-serif text-[48px] font-light text-gold leading-none mb-4">
+              <div className="font-serif text-[48px] font-light text-gold-deep leading-none mb-4">
                 {p.amount}
               </div>
               <p className="text-[15px] text-muted leading-relaxed">
@@ -133,7 +133,7 @@ export default function RestoAlSudPage() {
 
       {/* REQUISITI */}
       <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>Chi può accedere</Eyebrow>
+        <Eyebrow tone="light">Chi può accedere</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-12">
           Requisiti soggettivi
         </h2>
@@ -157,7 +157,7 @@ export default function RestoAlSudPage() {
           {REGIONI_AMMESSE.map((r) => (
             <span
               key={r}
-              className="text-[13px] tracking-[0.08em] uppercase text-gold border border-gold/40 px-5 py-2"
+              className="text-[13px] tracking-[0.08em] uppercase text-gold-deep border border-gold/40 px-5 py-2"
             >
               {r}
             </span>
@@ -182,14 +182,14 @@ export default function RestoAlSudPage() {
 
       {/* ITER */}
       <section className="bg-cream px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>Come funziona</Eyebrow>
+        <Eyebrow tone="light">Come funziona</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-14">
           L&apos;iter della domanda, in breve
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
           {ITER_STEPS.map((s) => (
             <div key={s.num}>
-              <div className="font-serif text-4xl font-light text-gold mb-4">
+              <div className="font-serif text-4xl font-light text-gold-deep mb-4">
                 {s.num}
               </div>
               <h3 className="font-serif text-lg font-medium text-ink mb-2.5 leading-snug">
@@ -205,7 +205,7 @@ export default function RestoAlSudPage() {
 
       {/* NORMATIVA */}
       <section className="px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>Riferimenti normativi</Eyebrow>
+        <Eyebrow tone="light">Riferimenti normativi</Eyebrow>
         <p className="text-base text-muted leading-relaxed max-w-2xl mb-10">
           {NORMATIVA_NOTE}
         </p>
@@ -226,7 +226,7 @@ export default function RestoAlSudPage() {
             href={INVITALIA_PAGINA}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[14px] text-gold mt-4"
+            className="flex items-center gap-2 text-[14px] text-gold-deep mt-4"
           >
             <ExternalLink size={14} /> Pagina ufficiale Invitalia
           </a>

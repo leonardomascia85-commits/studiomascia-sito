@@ -59,7 +59,7 @@ export default async function NewsTagPage({
                 href={`/news/${n.slug}`}
                 className="group py-8 first:pt-0"
               >
-                <time className="text-[12px] tracking-[0.15em] uppercase text-gold font-mono">
+                <time className="text-[12px] tracking-[0.15em] uppercase text-gold-deep font-mono">
                   {new Date(n.date).toLocaleDateString("it-IT", {
                     day: "2-digit",
                     month: "long",

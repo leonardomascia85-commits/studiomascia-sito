@@ -97,7 +97,7 @@ export default async function NewsArticlePage({
               href={item.source.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gold underline"
+              className="text-gold-deep underline"
             >
               {item.source.label}
             </a>

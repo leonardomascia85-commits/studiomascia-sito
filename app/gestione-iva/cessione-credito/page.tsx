@@ -64,7 +64,7 @@ export default function CessioneCreditoIvaPage() {
           <p className="text-[15px] text-[#3a3020] leading-relaxed font-light mb-3">
             {CREDITO_CEDIBILE.text}
           </p>
-          <p className="text-[13px] text-gold leading-relaxed">
+          <p className="text-[13px] text-gold-deep leading-relaxed">
             ⚠ {CREDITO_CEDIBILE.nota}
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function CessioneCreditoIvaPage() {
           <div className="grid sm:grid-cols-3 gap-6">
             {PROCEDURA.map((p, i) => (
               <div key={p.title} className="bg-parchment border-t-4 border-gold px-6 py-6">
-                <div className="font-serif text-2xl font-light text-gold mb-3">
+                <div className="font-serif text-2xl font-light text-gold-deep mb-3">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <h3 className="font-serif text-lg font-medium text-ink mb-2">
@@ -95,7 +95,7 @@ export default function CessioneCreditoIvaPage() {
           <p className="text-[15px] text-[#3a3020] leading-relaxed font-light mb-3">
             {VISTO_CONFORMITA.text}
           </p>
-          <p className="text-[13px] text-gold leading-relaxed">
+          <p className="text-[13px] text-gold-deep leading-relaxed">
             ⚠ {VISTO_CONFORMITA.attenzione}
           </p>
         </div>
@@ -124,9 +124,9 @@ export default function CessioneCreditoIvaPage() {
                 key={a.title}
                 className="flex items-start gap-3 bg-[#b5573f]/10 border border-[#b5573f]/40 px-5 py-4"
               >
-                <AlertTriangle size={18} className="text-[#d98a72] shrink-0 mt-0.5" />
-                <div className="text-[13px] text-[#e8a892] leading-relaxed">
-                  <strong className="text-white">{a.title}</strong> {a.text}
+                <AlertTriangle size={18} className="text-[#8a3e2b] shrink-0 mt-0.5" />
+                <div className="text-[13px] text-[#8a3e2b] leading-relaxed">
+                  <strong>{a.title}</strong> {a.text}
                 </div>
               </div>
             ))}

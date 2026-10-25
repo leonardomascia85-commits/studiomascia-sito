@@ -101,7 +101,7 @@ export default function GestioneIvaPage() {
           </p>
           <div className="grid sm:grid-cols-2 gap-10">
             <div>
-              <h3 className="text-[12px] tracking-[0.12em] uppercase text-gold mb-3">
+              <h3 className="text-[12px] tracking-[0.12em] uppercase text-gold-deep mb-3">
                 Requisiti
               </h3>
               <ul className="flex flex-col gap-2">
@@ -114,7 +114,7 @@ export default function GestioneIvaPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-[12px] tracking-[0.12em] uppercase text-gold mb-3">
+              <h3 className="text-[12px] tracking-[0.12em] uppercase text-gold-deep mb-3">
                 Vantaggi
               </h3>
               <ul className="flex flex-col gap-2">
@@ -136,7 +136,7 @@ export default function GestioneIvaPage() {
           <p className="text-[15px] text-[#3a3020] leading-relaxed font-light mb-3">
             {FATTURAZIONE_ELETTRONICA.text}
           </p>
-          <p className="text-[13px] text-gold leading-relaxed">
+          <p className="text-[13px] text-gold-deep leading-relaxed">
             ⚠ {FATTURAZIONE_ELETTRONICA.nota}
           </p>
         </div>

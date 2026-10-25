@@ -62,7 +62,7 @@ export default function HomePage() {
 
       {/* SERVIZI */}
       <section className="px-6 py-16 md:px-[60px] md:py-24">
-        <Eyebrow>Cosa facciamo</Eyebrow>
+        <Eyebrow tone="light">Cosa facciamo</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[44px] font-light text-ink leading-tight mb-10 md:mb-12">
           I nostri servizi
           <br />
@@ -72,7 +72,7 @@ export default function HomePage() {
           {SERVICES.map((s) => {
             const cardContent = (
               <>
-                <div className="font-serif text-sm text-gold/60 group-hover:text-gold/40 mb-5">
+                <div className="font-serif text-sm text-gold-deep group-hover:text-gold/40 mb-5">
                   {s.number}
                 </div>
                 <h3 className="font-serif text-xl font-medium text-ink group-hover:text-white transition-colors mb-3.5 leading-snug">
@@ -124,7 +124,7 @@ export default function HomePage() {
           <h3 className="font-serif text-[32px] font-normal text-ink mb-1">
             {STUDIO_INFO.founder}
           </h3>
-          <p className="text-[13px] tracking-[0.15em] uppercase text-ink/60 mb-9">
+          <p className="text-[13px] tracking-[0.15em] uppercase text-ink/80 mb-9">
             Titolare · Commercialista · Revisore Legale
           </p>
           <ul className="flex flex-col gap-3.5">
@@ -150,7 +150,7 @@ export default function HomePage() {
           <>
             Pronti ad aiutarti.
             <br />
-            <em className="text-gold">Contattateci oggi.</em>
+            <em className="text-gold-deep">Contattateci oggi.</em>
           </>
         }
         description={

@@ -93,7 +93,7 @@ export default function ContenziosoTributarioPage() {
             className="group bg-parchment hover:bg-ink border-t-4 border-gold px-6 py-10 md:px-8 transition-colors"
           >
             <div className="flex items-center justify-between gap-3 mb-3">
-              <span className="font-serif text-[13px] text-gold/70 group-hover:text-gold">
+              <span className="font-serif text-[13px] text-gold-deep group-hover:text-gold">
                 Percorso {i + 1}
               </span>
               <ArrowRight
@@ -122,7 +122,7 @@ export default function ContenziosoTributarioPage() {
             <p className="font-serif text-xl md:text-2xl font-medium text-ink">
               Non sai da dove iniziare? Inviaci subito i tuoi documenti.
             </p>
-            <p className="text-[13px] text-ink/70 mt-1">
+            <p className="text-[13px] text-ink/80 mt-1">
               Prima valutazione e preventivo, gratuiti e senza impegno.
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function ContenziosoTributarioPage() {
 
       {/* PERCORSO 1 — CONTENZIOSO TRIBUTARIO */}
       <section id={PERCORSO_CONTENZIOSO.slug} className="px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px]">
-        <Eyebrow>Percorso 1</Eyebrow>
+        <Eyebrow tone="light">Percorso 1</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
           {PERCORSO_CONTENZIOSO.title}
         </h2>
@@ -153,14 +153,14 @@ export default function ContenziosoTributarioPage() {
             </li>
           ))}
         </ul>
-        <p className="font-serif italic text-lg text-gold leading-relaxed max-w-2xl">
+        <p className="font-serif italic text-lg text-gold-deep leading-relaxed max-w-2xl">
           {PERCORSO_CONTENZIOSO.chiusura}
         </p>
       </section>
 
       {/* PERCORSO 2 — SOVRAINDEBITAMENTO */}
       <section id={PERCORSO_SOVRAINDEBITAMENTO.slug} className="bg-parchment px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px]">
-        <Eyebrow>Percorso 2</Eyebrow>
+        <Eyebrow tone="light">Percorso 2</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
           {PERCORSO_SOVRAINDEBITAMENTO.title}
         </h2>
@@ -186,7 +186,7 @@ export default function ContenziosoTributarioPage() {
           <p className="text-[15px] text-muted leading-relaxed mb-3">
             {ESDEBITAZIONE.text}
           </p>
-          <p className="text-[13px] text-gold leading-relaxed">
+          <p className="text-[13px] text-gold-deep leading-relaxed">
             ⚠ {ESDEBITAZIONE.nota}
           </p>
         </div>
@@ -195,14 +195,14 @@ export default function ContenziosoTributarioPage() {
           {OCC_NOTA}
         </p>
 
-        <p className="font-serif italic text-lg text-gold leading-relaxed max-w-2xl">
+        <p className="font-serif italic text-lg text-gold-deep leading-relaxed max-w-2xl">
           {PERCORSO_SOVRAINDEBITAMENTO.chiusura}
         </p>
       </section>
 
       {/* PERCORSO 3 — ANNULLAMENTO CARTELLE */}
       <section id={PERCORSO_CARTELLE.slug} className="bg-cream px-6 py-20 md:px-[60px] md:py-28 scroll-mt-[70px]">
-        <Eyebrow>Percorso 3</Eyebrow>
+        <Eyebrow tone="light">Percorso 3</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-8">
           {PERCORSO_CARTELLE.title}
         </h2>
@@ -237,21 +237,21 @@ export default function ContenziosoTributarioPage() {
           </p>
         </div>
 
-        <p className="font-serif italic text-lg text-[#8a6a1e] leading-relaxed max-w-2xl">
+        <p className="font-serif italic text-lg text-gold-deep leading-relaxed max-w-2xl">
           {PERCORSO_CARTELLE.chiusura}
         </p>
       </section>
 
       {/* ITER */}
       <section className="px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>Come funziona</Eyebrow>
+        <Eyebrow tone="light">Come funziona</Eyebrow>
         <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-14">
           Il percorso, passo dopo passo
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {ITER_STEPS.map((s) => (
             <div key={s.num}>
-              <div className="font-serif text-4xl font-light text-gold mb-4">
+              <div className="font-serif text-4xl font-light text-gold-deep mb-4">
                 {s.num}
               </div>
               <h3 className="font-serif text-lg font-medium text-ink mb-2.5 leading-snug">
@@ -269,7 +269,7 @@ export default function ContenziosoTributarioPage() {
 
       {/* NORMATIVA */}
       <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
-        <Eyebrow>Riferimenti normativi</Eyebrow>
+        <Eyebrow tone="light">Riferimenti normativi</Eyebrow>
         <div className="flex flex-col gap-2 max-w-2xl">
           {NORMATIVA_REFS.map((n) => (
             <a

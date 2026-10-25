@@ -92,7 +92,7 @@ export default function RevisioneLegalePage() {
 
       {/* QUANDO È OBBLIGATORIA */}
       <section className="px-6 py-16 md:px-[60px] md:py-20">
-        <Eyebrow>Quando la revisione è obbligatoria</Eyebrow>
+        <Eyebrow tone="light">Quando la revisione è obbligatoria</Eyebrow>
         <h2 className="font-serif text-3xl md:text-[38px] font-light text-ink leading-tight mb-6 max-w-2xl">
           L&apos;obbligo di nomina dell&apos;organo di controllo
         </h2>
@@ -117,7 +117,7 @@ export default function RevisioneLegalePage() {
 
       {/* COSA FACCIAMO */}
       <section className="bg-parchment px-6 py-16 md:px-[60px] md:py-20">
-        <Eyebrow>Cosa facciamo</Eyebrow>
+        <Eyebrow tone="light">Cosa facciamo</Eyebrow>
         <h2 className="font-serif text-3xl md:text-[38px] font-light text-ink leading-tight mb-10 max-w-2xl">
           I nostri incarichi di revisione
         </h2>
@@ -133,14 +133,14 @@ export default function RevisioneLegalePage() {
 
       {/* COME LAVORIAMO */}
       <section className="px-6 py-16 md:px-[60px] md:py-20">
-        <Eyebrow>Come lavoriamo</Eyebrow>
+        <Eyebrow tone="light">Come lavoriamo</Eyebrow>
         <h2 className="font-serif text-3xl md:text-[38px] font-light text-ink leading-tight mb-14 max-w-2xl">
           Il percorso, passo dopo passo
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
           {COME_LAVORIAMO.map((s) => (
             <div key={s.num}>
-              <div className="font-serif text-4xl font-light text-gold mb-4">{s.num}</div>
+              <div className="font-serif text-4xl font-light text-gold-deep mb-4">{s.num}</div>
               <h3 className="font-serif text-base font-medium text-ink mb-2.5 leading-snug">
                 {s.title}
               </h3>
@@ -167,7 +167,7 @@ export default function RevisioneLegalePage() {
 
       {/* FAQ */}
       <section className="px-6 py-16 md:px-[60px] md:py-20">
-        <Eyebrow>Domande frequenti</Eyebrow>
+        <Eyebrow tone="light">Domande frequenti</Eyebrow>
         <h2 className="font-serif text-3xl md:text-[38px] font-light text-ink leading-tight mb-10 max-w-2xl">
           Le domande più comuni
         </h2>

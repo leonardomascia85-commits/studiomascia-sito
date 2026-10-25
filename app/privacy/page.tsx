@@ -51,11 +51,11 @@ export default function PrivacyPage() {
           <p>
             Per qualsiasi richiesta relativa al trattamento dei tuoi dati
             personali puoi scrivere a{" "}
-            <a href={`mailto:${STUDIO_INFO.email}`} className="text-gold underline underline-offset-2">
+            <a href={`mailto:${STUDIO_INFO.email}`} className="text-gold-deep underline underline-offset-2">
               {STUDIO_INFO.email}
             </a>{" "}
             o via PEC a{" "}
-            <a href={`mailto:${STUDIO_INFO.pec}`} className="text-gold underline underline-offset-2">
+            <a href={`mailto:${STUDIO_INFO.pec}`} className="text-gold-deep underline underline-offset-2">
               {STUDIO_INFO.pec}
             </a>
             .
@@ -182,7 +182,7 @@ export default function PrivacyPage() {
               href="https://www.facebook.com/privacy/policy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gold underline underline-offset-2"
+              className="text-gold-deep underline underline-offset-2"
             >
               informativa privacy di Meta
             </a>
@@ -197,7 +197,7 @@ export default function PrivacyPage() {
             cancellazione degli stessi, la limitazione del trattamento, la
             portabilità dei dati e di opporti al trattamento (artt. 15-22
             GDPR), scrivendo a{" "}
-            <a href={`mailto:${STUDIO_INFO.email}`} className="text-gold underline underline-offset-2">
+            <a href={`mailto:${STUDIO_INFO.email}`} className="text-gold-deep underline underline-offset-2">
               {STUDIO_INFO.email}
             </a>
             .
@@ -209,7 +209,7 @@ export default function PrivacyPage() {
               href="https://www.garanteprivacy.it"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gold underline underline-offset-2"
+              className="text-gold-deep underline underline-offset-2"
             >
               www.garanteprivacy.it
             </a>

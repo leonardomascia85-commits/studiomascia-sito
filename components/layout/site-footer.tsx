@@ -35,7 +35,7 @@ export function SiteFooter() {
             </a>
           )}
         </div>
-        <p className="text-[13px] text-white/40 text-center sm:text-right leading-relaxed">
+        <p className="text-[13px] text-white/55 text-center sm:text-right leading-relaxed">
           {STUDIO_INFO.address} · {STUDIO_INFO.city} · P.IVA {STUDIO_INFO.piva}
           <br />
           {STUDIO_INFO.email} · © {new Date().getFullYear()} ·{" "}

@@ -33,7 +33,7 @@ export function CtaBanner({
         {description && (
           <p
             className={`text-[15px] leading-relaxed ${
-              dark ? "text-white/40" : "text-muted"
+              dark ? "text-white/55" : "text-muted"
             }`}
           >
             {description}

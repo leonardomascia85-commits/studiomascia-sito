@@ -123,7 +123,7 @@ export function ContactForm() {
         >
           {pending ? "Invio in corso…" : "Invia messaggio"}
         </button>
-        <p className="text-[13px] text-[#aaa098] max-w-[400px] leading-relaxed">
+        <p className="text-[13px] text-[#76706a] max-w-[400px] leading-relaxed">
           Inviando il modulo accetti il trattamento dei dati personali ai
           sensi del GDPR. Consulta la{" "}
           <Link href="/privacy" className="underline hover:text-muted">

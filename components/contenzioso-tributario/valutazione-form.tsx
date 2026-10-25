@@ -88,7 +88,7 @@ export function ValutazioneForm() {
           <ol className="flex flex-col gap-1.5 mb-3">
             {GUIDA_SITUAZIONE_DEBITORIA.steps.map((s, i) => (
               <li key={s} className="flex items-start gap-2.5 text-[13px] text-[#3a3020] leading-relaxed">
-                <span className="text-gold font-medium shrink-0">{i + 1}.</span>
+                <span className="text-gold-deep font-medium shrink-0">{i + 1}.</span>
                 {s}
               </li>
             ))}
@@ -110,7 +110,7 @@ export function ValutazioneForm() {
             accept=".pdf,.jpg,.jpeg,.png"
             className={`${fieldClass} file:mr-4 file:border-0 file:bg-ink file:text-white file:text-[12px] file:uppercase file:tracking-[0.08em] file:px-4 file:py-2 file:cursor-pointer`}
           />
-          <p className="text-[12px] text-[#aaa098]">
+          <p className="text-[12px] text-[#76706a]">
             Fino a 5 file, PDF o immagini, massimo 10 MB ciascuno.
           </p>
         </div>

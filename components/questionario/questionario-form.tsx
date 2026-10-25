@@ -85,7 +85,7 @@ export function QuestionarioForm() {
   return (
     <form action={action} className="flex flex-col gap-11 max-w-[720px]">
       <div>
-        <Eyebrow>Requisiti del bando</Eyebrow>
+        <Eyebrow tone="light">Requisiti del bando</Eyebrow>
       </div>
 
       <div className="flex flex-col gap-4">
@@ -128,7 +128,7 @@ export function QuestionarioForm() {
       </div>
 
       <div className="pt-2">
-        <Eyebrow>Il tuo progetto</Eyebrow>
+        <Eyebrow tone="light">Il tuo progetto</Eyebrow>
       </div>
 
       <div className="flex flex-col gap-4">
@@ -220,7 +220,7 @@ export function QuestionarioForm() {
         >
           {pending ? "Invio in corso…" : "Invia il questionario"}
         </button>
-        <p className="text-[13px] text-[#aaa098] max-w-[400px] leading-relaxed">
+        <p className="text-[13px] text-[#76706a] max-w-[400px] leading-relaxed">
           Inviando il modulo accetti il trattamento dei dati personali ai
           sensi del GDPR. Consulta la{" "}
           <Link href="/privacy" className="underline hover:text-muted">

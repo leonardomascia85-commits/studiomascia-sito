@@ -3,15 +3,19 @@
 :root {
   --color-ink: #0a1628;
   --color-gold: #c4a05a;
+  /* Variante più scura dell'oro, per testo su sfondi chiari (bianco/panna/pergamena):
+     #c4a05a in quei contesti non raggiunge il contrasto minimo WCAG AA. */
+  --color-gold-deep: #7f683a;
   --color-cream: #f5f0e8;
   --color-parchment: #faf8f4;
   --color-line: #e8e0d0;
-  --color-muted: #7a7060;
+  --color-muted: #6d6456;
 }
 
 @theme inline {
   --color-ink: var(--color-ink);
   --color-gold: var(--color-gold);
+  --color-gold-deep: var(--color-gold-deep);
   --color-cream: var(--color-cream);
   --color-parchment: var(--color-parchment);
   --color-line: var(--color-line);

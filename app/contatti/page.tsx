@@ -35,7 +35,7 @@ export default function ContattiPage() {
 
       <section className="grid md:grid-cols-2 min-h-[500px]">
         <div className="bg-cream px-6 py-14 md:px-[60px] md:py-[72px] flex flex-col gap-10">
-          <Eyebrow>Dove siamo</Eyebrow>
+          <Eyebrow tone="light">Dove siamo</Eyebrow>
 
           <div className="border-l-2 border-gold pl-6">
             <div className="font-serif text-[15px] font-medium uppercase tracking-wide text-ink mb-2">

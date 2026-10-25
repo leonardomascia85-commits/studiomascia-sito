@@ -32,7 +32,7 @@ export default function NewsPage() {
             {news.map((n) => (
               <div key={n.slug} className="py-8 first:pt-0">
                 <Link href={`/news/${n.slug}`} className="group block">
-                  <time className="text-[12px] tracking-[0.15em] uppercase text-gold font-mono">
+                  <time className="text-[12px] tracking-[0.15em] uppercase text-gold-deep font-mono">
                     {new Date(n.date).toLocaleDateString("it-IT", {
                       day: "2-digit",
                       month: "long",
