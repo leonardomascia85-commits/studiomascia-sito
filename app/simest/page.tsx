@@ -20,7 +20,7 @@ import {
 } from "@/lib/content/simest";
 
 export const metadata = buildMetadata({
-  title: "Simest — Transizione Digitale o Ecologica",
+  title: "Simest",
   description:
     "Finanziamento agevolato Simest (Fondo 394/81) per la transizione digitale ed ecologica delle imprese esportatrici: importi, spese ammissibili, requisiti, documenti e iter della domanda. Accesso all'area clienti per chi ha già una pratica in corso.",
   path: "/simest",
