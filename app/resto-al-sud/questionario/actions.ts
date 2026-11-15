@@ -11,6 +11,7 @@ const REQUISITI_FIELDS = [
   "residenza",
   "regione",
   "statoIniziativa",
+  "attivitaPrecedente",
   "gol",
   "cumulabilita",
 ] as const;
@@ -41,6 +42,7 @@ const FIELD_LABELS: Record<(typeof REQUIRED_FIELDS)[number], string> = {
   residenza: "Regione di residenza attuale",
   regione: "Regione dell'iniziativa",
   statoIniziativa: "Stato dell'iniziativa",
+  attivitaPrecedente: "Attività precedente nello stesso settore",
   gol: "Aderente al Programma GOL",
   cumulabilita: "Altri contributi già ricevuti",
   settore: "Settore del progetto",

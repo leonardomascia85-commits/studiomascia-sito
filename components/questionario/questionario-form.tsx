@@ -17,6 +17,7 @@ import {
   CUMULABILITA_OPTIONS,
   SETTORE_OPTIONS,
   STATO_INIZIATIVA_OPTIONS,
+  ATTIVITA_PRECEDENTE_OPTIONS,
   FORMA_GIURIDICA_OPTIONS,
   SOCI_OPTIONS,
   PIVA_OPTIONS,
@@ -111,6 +112,14 @@ export function QuestionarioForm() {
       <div className="flex flex-col gap-4">
         <span className={labelClass}>A che punto sei con il progetto? *</span>
         <RadioGroup name="statoIniziativa" options={STATO_INIZIATIVA_OPTIONS} cols={3} />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <span className={labelClass}>
+          Sei stato/a titolare o socio/a di un&apos;attività nello stesso
+          settore, cessata di recente? *
+        </span>
+        <RadioGroup name="attivitaPrecedente" options={ATTIVITA_PRECEDENTE_OPTIONS} cols={2} />
       </div>
 
       <div className="flex flex-col gap-4">

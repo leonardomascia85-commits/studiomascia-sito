@@ -75,12 +75,21 @@ export const SETTORE_OPTIONS = [
 
 export const STATO_INIZIATIVA_OPTIONS = [
   "Non ho ancora avviato nulla",
-  "Ho avviato da meno di 12 mesi",
-  "Ho avviato da più di 12 mesi",
+  "Avviata da meno di un mese, non ancora operativa",
+  "Avviata da più di un mese, o già operativa",
+] as const;
+
+export const ATTIVITA_PRECEDENTE_OPTIONS = [
+  "No, nessuna attività precedente nello stesso settore",
+  "Sì, ma cessata da più di 6 mesi",
+  "Sì, cessata da meno di 6 mesi",
+  "Non sono sicuro/a",
 ] as const;
 
 export const FORMA_GIURIDICA_OPTIONS = [
   "Impresa individuale / Libero professionista",
   "Società",
+  "Società cooperativa",
+  "Società tra professionisti",
   "Non so ancora",
 ] as const;
