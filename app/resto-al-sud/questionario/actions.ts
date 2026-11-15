@@ -5,52 +5,31 @@ import { STUDIO_INFO } from "@/lib/content/studio-info";
 
 export type QuestionarioState = { success?: boolean; error?: string } | undefined;
 
-const REQUISITI_FIELDS = [
-  "eta",
-  "statoOccupazionale",
-  "residenza",
-  "regione",
-  "statoIniziativa",
-  "attivitaPrecedente",
-  "gol",
-  "cumulabilita",
-] as const;
-
-const PROGETTO_FIELDS = [
-  "settore",
-  "formaGiuridica",
-  "soci",
-  "piva",
-  "investimento",
-  "esperienza",
+const VOUCHER_FIELDS = [
+  "spesePreviste",
+  "maggiorazione",
+  "sedeOperativa",
+  "speseSostenute",
+  "contoDedicato",
+  "erogazione",
+  "tempistiche",
 ] as const;
 
 const CONTATTO_FIELDS = ["name", "phone", "email"] as const;
 
-const REQUIRED_FIELDS = [
-  ...CONTATTO_FIELDS,
-  ...REQUISITI_FIELDS,
-  ...PROGETTO_FIELDS,
-] as const;
+const REQUIRED_FIELDS = [...CONTATTO_FIELDS, ...VOUCHER_FIELDS] as const;
 
 const FIELD_LABELS: Record<(typeof REQUIRED_FIELDS)[number], string> = {
   name: "Nome e Cognome",
   phone: "Telefono",
   email: "Email",
-  eta: "Età",
-  statoOccupazionale: "Stato occupazionale",
-  residenza: "Regione di residenza attuale",
-  regione: "Regione dell'iniziativa",
-  statoIniziativa: "Stato dell'iniziativa",
-  attivitaPrecedente: "Attività precedente nello stesso settore",
-  gol: "Aderente al Programma GOL",
-  cumulabilita: "Altri contributi già ricevuti",
-  settore: "Settore del progetto",
-  formaGiuridica: "Forma giuridica prevista",
-  soci: "Da solo o con soci",
-  piva: "Partita IVA già aperta",
-  investimento: "Investimento previsto",
-  esperienza: "Esperienza nel settore",
+  spesePreviste: "Spese previste con il voucher",
+  maggiorazione: "Punta alla maggiorazione a 50.000 €",
+  sedeOperativa: "Sede operativa disponibile per 4 anni",
+  speseSostenute: "Spese o fatture già sostenute",
+  contoDedicato: "Conto corrente dedicato",
+  erogazione: "Modalità di erogazione preferita",
+  tempistiche: "Consapevolezza delle scadenze",
 };
 
 function formatBlock(
@@ -75,8 +54,7 @@ export async function sendQuestionario(
 
   const summary = [
     `Contatto:\n${formatBlock(values, CONTATTO_FIELDS)}`,
-    `Requisiti del bando:\n${formatBlock(values, REQUISITI_FIELDS)}`,
-    `Progetto:\n${formatBlock(values, PROGETTO_FIELDS)}`,
+    `Voucher Resto al Sud:\n${formatBlock(values, VOUCHER_FIELDS)}`,
   ].join("\n\n");
 
   try {
