@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/servizi",
     "/resto-al-sud",
     "/resto-al-sud/questionario",
+    "/simest",
+    "/simest/questionario",
     "/contenzioso-tributario",
     "/news",
     "/contatti",
