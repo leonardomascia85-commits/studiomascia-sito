@@ -9,19 +9,13 @@ import {
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { trackMetaEvent } from "@/lib/analytics/meta-pixel";
 import {
-  ETA_OPTIONS,
-  STATO_OCCUPAZIONALE_OPTIONS,
-  REGIONE_OPTIONS,
-  RESIDENZA_OPTIONS,
-  GOL_OPTIONS,
-  CUMULABILITA_OPTIONS,
-  SETTORE_OPTIONS,
-  STATO_INIZIATIVA_OPTIONS,
-  FORMA_GIURIDICA_OPTIONS,
-  SOCI_OPTIONS,
-  PIVA_OPTIONS,
-  INVESTIMENTO_OPTIONS,
-  ESPERIENZA_OPTIONS,
+  SPESE_PREVISTE_OPTIONS,
+  MAGGIORAZIONE_OPTIONS,
+  SEDE_OPERATIVA_OPTIONS,
+  SPESE_SOSTENUTE_OPTIONS,
+  CONTO_DEDICATO_OPTIONS,
+  EROGAZIONE_OPTIONS,
+  TEMPISTICHE_OPTIONS,
 } from "@/lib/content/questionario-resto-al-sud";
 
 const fieldClass =
@@ -85,82 +79,61 @@ export function QuestionarioForm() {
   return (
     <form action={action} className="flex flex-col gap-11 max-w-[720px]">
       <div>
-        <Eyebrow>Requisiti del bando</Eyebrow>
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>Quanti anni hai? *</span>
-        <RadioGroup name="eta" options={ETA_OPTIONS} cols={3} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>Qual è la tua condizione lavorativa attuale? *</span>
-        <RadioGroup name="statoOccupazionale" options={STATO_OCCUPAZIONALE_OPTIONS} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>In quale regione risiedi attualmente? *</span>
-        <RadioGroup name="residenza" options={RESIDENZA_OPTIONS} cols={3} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>In quale regione vuoi avviare il progetto? *</span>
-        <RadioGroup name="regione" options={REGIONE_OPTIONS} cols={3} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>A che punto sei con il progetto? *</span>
-        <RadioGroup name="statoIniziativa" options={STATO_INIZIATIVA_OPTIONS} cols={3} />
+        <Eyebrow>Il voucher</Eyebrow>
       </div>
 
       <div className="flex flex-col gap-4">
         <span className={labelClass}>
-          Aderisci al Programma GOL (Garanzia Occupabilità Lavoratori)? *
+          Che tipo di spese pensi di sostenere con il voucher? *
         </span>
-        <RadioGroup name="gol" options={GOL_OPTIONS} cols={3} />
+        <RadioGroup name="spesePreviste" options={SPESE_PREVISTE_OPTIONS} cols={2} />
       </div>
 
       <div className="flex flex-col gap-4">
         <span className={labelClass}>
-          Hai già ricevuto altri contributi per questa stessa iniziativa? *
+          Punti alla maggiorazione a 50.000 € (almeno il 20% di spese
+          innovative: tecnologico-digitali, sostenibilità ambientale,
+          risparmio energetico)? *
         </span>
-        <RadioGroup name="cumulabilita" options={CUMULABILITA_OPTIONS} cols={3} />
-      </div>
-
-      <div className="pt-2">
-        <Eyebrow>Il tuo progetto</Eyebrow>
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>Che tipo di attività vuoi avviare? *</span>
-        <RadioGroup name="settore" options={SETTORE_OPTIONS} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>Che forma giuridica pensi di usare? *</span>
-        <RadioGroup name="formaGiuridica" options={FORMA_GIURIDICA_OPTIONS} cols={3} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>Il progetto è... *</span>
-        <RadioGroup name="soci" options={SOCI_OPTIONS} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>Hai già una Partita IVA attiva? *</span>
-        <RadioGroup name="piva" options={PIVA_OPTIONS} />
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <span className={labelClass}>Quanto pensi di investire complessivamente? *</span>
-        <RadioGroup name="investimento" options={INVESTIMENTO_OPTIONS} cols={3} />
+        <RadioGroup name="maggiorazione" options={MAGGIORAZIONE_OPTIONS} cols={2} />
       </div>
 
       <div className="flex flex-col gap-4">
         <span className={labelClass}>
-          Hai già esperienza lavorativa o di studio nel settore? *
+          Hai una sede operativa disponibile per almeno 4 anni? *
         </span>
-        <RadioGroup name="esperienza" options={ESPERIENZA_OPTIONS} cols={3} />
+        <RadioGroup name="sedeOperativa" options={SEDE_OPERATIVA_OPTIONS} cols={3} />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <span className={labelClass}>
+          Hai già sostenuto spese o firmato fatture per questo progetto?
+          Valgono solo fatture successive alla presentazione della domanda. *
+        </span>
+        <RadioGroup name="speseSostenute" options={SPESE_SOSTENUTE_OPTIONS} cols={3} />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <span className={labelClass}>
+          Sai che tutti i pagamenti dovranno passare da un conto corrente
+          dedicato? *
+        </span>
+        <RadioGroup name="contoDedicato" options={CONTO_DEDICATO_OPTIONS} cols={3} />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <span className={labelClass}>
+          Come preferiresti ricevere il rimborso delle spese? *
+        </span>
+        <RadioGroup name="erogazione" options={EROGAZIONE_OPTIONS} cols={2} />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <span className={labelClass}>
+          Sai che le spese vanno completate entro 16 mesi (prorogabili a 20) e
+          il saldo richiesto entro il 30 giugno 2028? *
+        </span>
+        <RadioGroup name="tempistiche" options={TEMPISTICHE_OPTIONS} cols={3} />
       </div>
 
       <div className="flex flex-col gap-5 pt-4 border-t border-line">

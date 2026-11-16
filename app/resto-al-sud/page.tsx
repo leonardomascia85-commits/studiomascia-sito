@@ -13,6 +13,7 @@ import {
   NORMATIVA_REFS,
   INVITALIA_PAGINA,
   AREA_CLIENTI_URL,
+  FAQ,
 } from "@/lib/content/resto-al-sud";
 
 export const metadata = buildMetadata({
@@ -22,9 +23,23 @@ export const metadata = buildMetadata({
   path: "/resto-al-sud",
 });
 
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
 export default function RestoAlSudPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
       <section className="bg-ink px-6 py-16 md:px-[60px] md:py-24 grid md:grid-cols-2 gap-10 md:gap-20 items-end">
         <div>
           <Eyebrow>Bando Invitalia</Eyebrow>
@@ -230,6 +245,26 @@ export default function RestoAlSudPage() {
           >
             <ExternalLink size={14} /> Pagina ufficiale Invitalia
           </a>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-parchment px-6 py-20 md:px-[60px] md:py-28">
+        <Eyebrow>Domande frequenti</Eyebrow>
+        <h2 className="font-serif text-4xl md:text-[42px] font-light text-ink leading-tight mb-12">
+          Le domande più comuni
+        </h2>
+        <div className="flex flex-col max-w-3xl">
+          {FAQ.map((f) => (
+            <div key={f.question} className="border-b border-line py-6">
+              <h3 className="font-serif text-lg font-medium text-ink mb-2.5">
+                {f.question}
+              </h3>
+              <p className="text-[14.5px] text-[#3a3020] leading-relaxed font-light">
+                {f.answer}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -1,86 +1,44 @@
-export const ETA_OPTIONS = [
-  "Meno di 18 anni",
-  "18–35 anni",
-  "Oltre 35 anni",
-] as const;
-
-export const STATO_OCCUPAZIONALE_OPTIONS = [
-  "Disoccupato/a",
-  "Inoccupato/a (non ho mai lavorato)",
-  "Occupato/a dipendente",
-  "Occupato/a autonomo / P.IVA",
-  "Studente/essa",
-] as const;
-
-export const REGIONE_OPTIONS = [
-  "Abruzzo",
-  "Basilicata",
-  "Calabria",
-  "Campania",
-  "Molise",
-  "Puglia",
-  "Sardegna",
-  "Sicilia",
-  "Altra regione",
-] as const;
-
-export const RESIDENZA_OPTIONS = [
-  "Abruzzo",
-  "Basilicata",
-  "Calabria",
-  "Campania",
-  "Molise",
-  "Puglia",
-  "Sardegna",
-  "Sicilia",
-  "Altra regione italiana",
-  "Estero",
-] as const;
-
-export const GOL_OPTIONS = ["Sì", "No", "Non so cos'è"] as const;
-
-export const CUMULABILITA_OPTIONS = [
-  "No, nessun altro contributo",
-  "Sì, ho già altre agevolazioni",
-  "Non so",
-] as const;
-
-export const SOCI_OPTIONS = ["Da solo/a", "Con uno o più soci"] as const;
-
-export const PIVA_OPTIONS = ["Sì, già aperta", "No, non ancora"] as const;
-
-export const INVESTIMENTO_OPTIONS = [
-  "Fino a 20.000 €",
-  "20.000 – 50.000 €",
-  "50.000 – 120.000 €",
-  "120.000 – 200.000 €",
+export const SPESE_PREVISTE_OPTIONS = [
+  "Macchinari, impianti, attrezzature o arredi nuovi",
+  "Programmi informatici e servizi ICT",
+  "Immobilizzazioni immateriali (brevetti, licenze)",
+  "Consulenze tecnico-specialistiche",
+  "Più tipologie insieme",
   "Non so ancora",
 ] as const;
 
-export const ESPERIENZA_OPTIONS = [
-  "Sì, esperienza lavorativa diretta",
-  "Studi o formazione nel settore",
-  "Nessuna esperienza specifica",
+export const MAGGIORAZIONE_OPTIONS = [
+  "Sì, ho già individuato spese innovative per almeno il 20%",
+  "Forse, vorrei valutarlo con voi",
+  "No, mi basta il voucher base fino a 40.000 €",
 ] as const;
 
-export const SETTORE_OPTIONS = [
-  "Commercio",
-  "Artigianato",
-  "Servizi alla persona o alle imprese",
-  "Turismo e ristorazione",
-  "Agricoltura e agroalimentare",
-  "Tecnologia e digitale",
-  "Altro",
+export const SEDE_OPERATIVA_OPTIONS = [
+  "Sì, di proprietà",
+  "Sì, in affitto o comodato d'uso registrabile",
+  "Non ancora individuata",
 ] as const;
 
-export const STATO_INIZIATIVA_OPTIONS = [
-  "Non ho ancora avviato nulla",
-  "Ho avviato da meno di 12 mesi",
-  "Ho avviato da più di 12 mesi",
+export const SPESE_SOSTENUTE_OPTIONS = [
+  "No, non ho ancora speso nulla",
+  "Sì, ho già alcune fatture o acconti precedenti",
+  "Non sono sicuro/a",
 ] as const;
 
-export const FORMA_GIURIDICA_OPTIONS = [
-  "Impresa individuale / Libero professionista",
-  "Società",
-  "Non so ancora",
+export const CONTO_DEDICATO_OPTIONS = [
+  "Sì, lo apro appena serve",
+  "Ne ho già uno dedicato",
+  "Non lo sapevo",
+] as const;
+
+export const EROGAZIONE_OPTIONS = [
+  "SAL, un acconto in corso d'opera",
+  "Saldo unico, a fine progetto",
+  "Non so, vorrei una spiegazione",
+] as const;
+
+export const TEMPISTICHE_OPTIONS = [
+  "Sì, rientra nei miei tempi",
+  "Potrebbe essere un po' stretto",
+  "Non lo sapevo",
 ] as const;
